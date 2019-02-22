@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CommonCrypto
 
 private var key: Void?
 private var key1: Void?

@@ -130,7 +130,7 @@
 		3C065AAD221E815F00F1C9C7 /* LXTools */ = {
 			isa = PBXGroup;
 			children = (
-				3C065ADC221E84B000F1C9C7 /* Header.h */,
+				3C065B01221FCAAE00F1C9C7 /* header */,
 				3C065AF7221E9FDB00F1C9C7 /* delegate */,
 				3C065AEE221E91F300F1C9C7 /* basic */,
 				3C065AE9221E8DFB00F1C9C7 /* Log */,
@@ -189,6 +189,14 @@
 				3C065ABA221E816100F1C9C7 /* Info.plist */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		3C065B01221FCAAE00F1C9C7 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				3C065ADC221E84B000F1C9C7 /* Header.h */,
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 		F7D81316A4364EAF92AAA180 /* Pods */ = {
@@ -603,7 +611,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = LXTools/header/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -623,7 +631,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = LXTools/header/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
