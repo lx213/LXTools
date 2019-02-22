@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.0.1'
+    s.version      = '0.0.2'
+    s.swift_version = '4.0'
     s.summary      = 'a cardview on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'
     s.license      = 'MIT'
@@ -8,7 +9,7 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '8.0'
     s.source       = {:git => 'https://github.com/lx213/LXTools.git', :tag => s.version}
     s.source_files = 'LXTools/**/*.swift'
-    s.framework    = 'CoreMedia'
+    s.public_header_files = 'LXTools/Header.h'
     s.dependency 'HandyJSON','~> 4.2.0'
 s.dependency 'Alamofire','4.5.1'
 s.dependency 'Moya/RxSwift','~>11.0'
@@ -18,5 +19,5 @@ s.dependency 'SnapKit'
 s.dependency 'YYWebImage'
 s.dependency 'IQKeyboardManagerSwift'
 s.dependency 'MJRefresh'
-s.dependency 'SKPhotoBrowser','5.0.6'
+s.dependency 'SKPhotoBrowser','6.0.0'
 end

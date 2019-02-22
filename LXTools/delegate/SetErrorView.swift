@@ -16,7 +16,7 @@ public protocol SetErrorView {
 
 extension SetErrorView where Self: UIViewController {
     
-    func setErrorView(pview: UIView, action: Selector, imgName: String){
+    public func setErrorView(pview: UIView, action: Selector, imgName: String){
         hideErrorView(pview: pview)
         let v = UIView()
         v.backgroundColor = UIColor.white
@@ -68,7 +68,7 @@ extension SetErrorView where Self: UIViewController {
         
     }
     
-    func hideErrorView(pview: UIView){
+    public func hideErrorView(pview: UIView){
         pview.subviews.filter({ $0.tag == 9012 }).first?.removeFromSuperview()
     }
 }

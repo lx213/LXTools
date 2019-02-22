@@ -17,7 +17,6 @@
 		3C065AE6221E8D8C00F1C9C7 /* UIImageEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AE1221E8D8C00F1C9C7 /* UIImageEx.swift */; };
 		3C065AE8221E8D8C00F1C9C7 /* AllExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AE3221E8D8C00F1C9C7 /* AllExtension.swift */; };
 		3C065AEB221E8E1700F1C9C7 /* KRTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AEA221E8E1700F1C9C7 /* KRTLog.swift */; };
-		3C065AED221E8E2D00F1C9C7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C065AEC221E8E2D00F1C9C7 /* CoreMedia.framework */; };
 		3C065AF4221E9AE800F1C9C7 /* BaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AF3221E9AE800F1C9C7 /* BaseFunc.swift */; };
 		3C065AF6221E9F5500F1C9C7 /* DefaultCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AF5221E9F5500F1C9C7 /* DefaultCheck.swift */; };
 		3C065AFC221E9FF100F1C9C7 /* MJRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AF8221E9FF000F1C9C7 /* MJRefreshController.swift */; };
@@ -77,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C065AED221E8E2D00F1C9C7 /* CoreMedia.framework in Frameworks */,
 				8296FC01E6BFB3F66CD5CC14 /* Pods_LXTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +130,7 @@
 		3C065AAD221E815F00F1C9C7 /* LXTools */ = {
 			isa = PBXGroup;
 			children = (
+				3C065ADC221E84B000F1C9C7 /* Header.h */,
 				3C065AF7221E9FDB00F1C9C7 /* delegate */,
 				3C065AEE221E91F300F1C9C7 /* basic */,
 				3C065AE9221E8DFB00F1C9C7 /* Log */,
@@ -188,7 +187,6 @@
 				3C065AB5221E816100F1C9C7 /* Assets.xcassets */,
 				3C065AB7221E816100F1C9C7 /* LaunchScreen.storyboard */,
 				3C065ABA221E816100F1C9C7 /* Info.plist */,
-				3C065ADC221E84B000F1C9C7 /* Header.h */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -531,6 +529,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -585,6 +584,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -603,7 +603,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = Example/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -623,7 +623,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = Example/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

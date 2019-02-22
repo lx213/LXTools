@@ -10,5 +10,5 @@ pod 'SnapKit'
 pod 'YYWebImage'
 pod 'IQKeyboardManagerSwift'
 pod 'MJRefresh'
-pod 'SKPhotoBrowser','5.0.6'
+pod 'SKPhotoBrowser','6.0.0'
 end

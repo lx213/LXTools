@@ -16,7 +16,7 @@ public protocol SetNoDataView {
 extension SetNoDataView where Self: UIViewController {
     
     
-    func setNoDataView(pview: UIView, imgName: String){
+    public func setNoDataView(pview: UIView, imgName: String){
         hideNoDataView(pview: pview)
         let img = UIImageView()
         img.image = UIImage(named: imgName)
@@ -29,7 +29,7 @@ extension SetNoDataView where Self: UIViewController {
         
     }
     
-    func hideNoDataView(pview: UIView){
+    public func hideNoDataView(pview: UIView){
         pview.subviews.filter({ $0.tag == 9011 }).first?.removeFromSuperview()
     }
 }

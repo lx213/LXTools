@@ -14,13 +14,13 @@ private var key1: Void?
 private var key2: Void?
 
 extension Int {
-    func tompx() -> CGFloat {
+    public func tompx() -> CGFloat {
         let m = CGFloat(self) * mpx
         return m
     }
 }
 extension UIView {
-    func rotate360DegreeWithImageView(duration:CFTimeInterval , repeatCount :Float ) {
+    public func rotate360DegreeWithImageView(duration:CFTimeInterval , repeatCount :Float ) {
         
         //让其在z轴旋转
         let rotationAnimation  = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -41,20 +41,20 @@ extension UIView {
         
     }
     //停止旋转
-    func stopRotate() {
+    public func stopRotate() {
         
         self.layer.removeAllAnimations()
     }
     
  
     //添加点击事件
-    func addOnClickListener(target: AnyObject, action: Selector) {
+    public func addOnClickListener(target: AnyObject, action: Selector) {
         let gr = UITapGestureRecognizer(target: target, action: action)
         isUserInteractionEnabled = true
         addGestureRecognizer(gr)
     }
     
-    @IBInspectable var keyName: AnyObject? {
+    @IBInspectable public var keyName: AnyObject? {
         get {
             return objc_getAssociatedObject(self, &key) as AnyObject
         }
@@ -65,7 +65,7 @@ extension UIView {
     
     
     
-    func rotate(toValue: CGFloat, duration: CFTimeInterval = 0.2) {
+    public func rotate(toValue: CGFloat, duration: CFTimeInterval = 0.2) {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         
         animation.toValue = toValue
@@ -81,7 +81,7 @@ extension UIView {
 
 extension UIColor {
     //用数值初始化颜色，便于生成设计图上标明的十六进制颜色
-    convenience init(valueRGB: UInt, alpha: CGFloat = 1.0) {
+    public convenience init(valueRGB: UInt, alpha: CGFloat = 1.0) {
         self.init(
             red: CGFloat((valueRGB & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((valueRGB & 0x00FF00) >> 8) / 255.0,
@@ -132,7 +132,7 @@ extension UIColor {
      - parameter   hexString:
      - returns: color with the given hex string
      */
-    convenience init?(hexString: String) {
+    public convenience init?(hexString: String) {
         self.init(hexString: hexString, alpha: 1.0)
     }
     
@@ -143,7 +143,7 @@ extension UIColor {
      - parameter   alpha:
      - returns: color with the given hex string and alpha
      */
-    convenience init?(hexString: String, alpha: CGFloat) {
+    public convenience init?(hexString: String, alpha: CGFloat) {
         var cString: String = hexString.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         
         if cString.characters.count < 6 {
@@ -185,7 +185,7 @@ extension UIColor {
      - parameter   hex:
      - returns: color with the given hex value
      */
-    convenience init?(hex: Int) {
+    public convenience init?(hex: Int) {
         self.init(hex: hex, alpha: 1.0)
     }
     
@@ -196,7 +196,7 @@ extension UIColor {
      - parameter   alpha:
      - returns: color with the given hex value and alpha
      */
-    convenience init?(hex: Int, alpha: CGFloat) {
+    public convenience init?(hex: Int, alpha: CGFloat) {
         //        let hexString = NSString(format: "%2X", hex)
         //        self.init(hexString: hexString as String, alpha: alpha)
         self.init(
@@ -211,7 +211,7 @@ extension UIColor {
 
 extension UITextField{
     /// 验证输入内容
-    func checkText(string: String) -> Bool {
+    public func checkText(string: String) -> Bool {
         if string != "" {
             if let digits = self.digits {
                 if digits != "" && !digits.contains(string) {
@@ -228,7 +228,7 @@ extension UITextField{
     }
     
     /// 跳转到一下一个或收起键盘
-    func toNext(tfs: [UITextField]) {
+    public func toNext(tfs: [UITextField]) {
         for (index,tf) in tfs.enumerated() {
             if tf == self {
                 if index == tfs.count - 1 {
@@ -242,12 +242,12 @@ extension UITextField{
     }
     
     /// 过滤空格
-    func getTrim() -> String {
+    public func getTrim() -> String {
         return self.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
     /// 验证最终内容
-    func checkMsgFail(condition: Bool, errormsg: String ) -> Bool {
+    public func checkMsgFail(condition: Bool, errormsg: String ) -> Bool {
         if !condition {
             AlertShow(msg: errormsg)
             self.becomeFirstResponder()
@@ -256,7 +256,7 @@ extension UITextField{
     }
     
     /// 内容限制
-    @IBInspectable var digits: String? {
+    @IBInspectable public var digits: String? {
         get {
             return objc_getAssociatedObject(self, &key1) as? String
         }
@@ -266,7 +266,7 @@ extension UITextField{
     }
     
     /// 最大长度
-    var maxlength: Int? {
+    public var maxlength: Int? {
         get {
             return objc_getAssociatedObject(self, &key2) as? Int
         }
@@ -277,33 +277,33 @@ extension UITextField{
     
     //-------链式赋值------//
     /// 设置内容限制
-    func msetDigits(digits: String) -> Self{
+    public func msetDigits(digits: String) -> Self{
         self.digits = digits
         return self
     }
     /// 设置最大长度
-    func msetMaxlength(maxlength: Int) -> Self {
+    public func msetMaxlength(maxlength: Int) -> Self {
         self.maxlength = maxlength
         return self
     }
     /// 设置delegate
-    func msetDelegate(delegate: UITextFieldDelegate) -> Self {
+    public func msetDelegate(delegate: UITextFieldDelegate) -> Self {
         self.delegate = delegate
         return self
     }
     /// 设置回车键类型
-    func msetReturnKeyType(keytype: UIReturnKeyType) -> Self {
+    public func msetReturnKeyType(keytype: UIReturnKeyType) -> Self {
         self.returnKeyType = keytype
         return self
     }
     /// 设置键盘类型
-    func msetKeyboardType(kbtype: UIKeyboardType) -> Self {
+    public func msetKeyboardType(kbtype: UIKeyboardType) -> Self {
         self.keyboardType = kbtype
         return self
     }
 }
 
-enum mDigits: String {
+public enum mDigits: String {
     case number = "0123456789"
     case letterlow = "qazwsxedcrfvtgbyhnujmikolp"
     case letterall = "qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP"
@@ -313,7 +313,7 @@ enum mDigits: String {
 }
 
 extension UILabel {
-    func getLabelSize(maxwidth: CGFloat) -> CGSize{
+    public func getLabelSize(maxwidth: CGFloat) -> CGSize{
         if self.text == "" {
             return CGSize.zero
         }
@@ -331,7 +331,7 @@ extension UILabel {
 //MARK: - frame extension
 extension UIView {
     /// x
-    var zj_x: CGFloat {
+    public var zj_x: CGFloat {
         set(x) {
             frame.origin.x = x
         }
@@ -341,7 +341,7 @@ extension UIView {
         }
     }
     /// y
-    var zj_y:CGFloat {
+    public var zj_y:CGFloat {
         set(y) {
             frame.origin.y = y
         }
@@ -351,7 +351,7 @@ extension UIView {
         }
     }
     /// centerX
-    var zj_centerX: CGFloat {
+    public var zj_centerX: CGFloat {
         set(centerX) {
             center.x = centerX
         }
@@ -361,7 +361,7 @@ extension UIView {
         }
     }
     /// centerY
-    var zj_centerY: CGFloat {
+    public var zj_centerY: CGFloat {
         set(centerY) {
             center.y = centerY
         }
@@ -371,7 +371,7 @@ extension UIView {
         }
     }
     /// width
-    var zj_width: CGFloat {
+    public var zj_width: CGFloat {
         set(width) {
             frame.size.width = width
         }
@@ -381,7 +381,7 @@ extension UIView {
         }
     }
     /// height
-    var zj_height: CGFloat {
+    public var zj_height: CGFloat {
         set(height) {
             frame.size.height = height
         }
@@ -395,42 +395,42 @@ extension UIView {
 
 extension String {
     
-    func toDate(format: String) -> Date? {
+    public func toDate(format: String) -> Date? {
         let df = DateFormatter()
         df.dateFormat = format
         return df.date(from: self)
     }
     
-    var length: Int {
+    public var length: Int {
         return self.characters.count
         
     }
-    subscript (i: Int) -> String {
+    public subscript (i: Int) -> String {
         return self[i ..< i + 1]
     }
-    func substring(fromIndex: Int) -> String {
+    public func substring(fromIndex: Int) -> String {
         return self[min(fromIndex, length) ..< length]
         
     }
-    func substring(toIndex: Int) -> String {
+    public func substring(toIndex: Int) -> String {
         return self[0 ..< max(0, toIndex)]
         
     }
-    subscript (r: Range<Int>) -> String {
+    public subscript (r: Range<Int>) -> String {
         let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)), upper: min(length, max(0, r.upperBound))))
         let start = index(startIndex, offsetBy: range.lowerBound)
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ..< end])
         
     }
-    func dropLast(_ n: Int = 1) -> String {
+    public func dropLast(_ n: Int = 1) -> String {
         return String(characters.dropLast(n))
     }
-    var dropLast: String {
+    public var dropLast: String {
         return dropLast()
     }
     
-    var PinyinFirst : Dictionary<String,String>{
+    public var PinyinFirst : Dictionary<String,String>{
  
         
  
@@ -458,7 +458,7 @@ extension String {
         
 
     }
-    var todctSS :Dictionary<String,AnyObject>{
+    public var todctSS :Dictionary<String,AnyObject>{
         var dct = Dictionary<String,AnyObject>()
         do{
             dct = try JSONSerialization.jsonObject(with: self.data(using: String.Encoding.utf8 )!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
@@ -467,7 +467,7 @@ extension String {
         }
         return dct
     }
-    var md5 : String{
+    public var md5 : String{
         let str = self.cString(using: String.Encoding.utf8)
         let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
         let digestLen = Int(CC_MD5_DIGEST_LENGTH)
@@ -483,7 +483,7 @@ extension String {
         
         return String(format: hash as String)
     }
-    func isTelNumber()->Bool
+    public func isTelNumber()->Bool
     {
         let num = self
         let mobile = "^1((3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$)"
@@ -507,7 +507,7 @@ extension String {
         }
     }
     
-    func ReSetPhone()->String{   //手机号格式化
+    public func ReSetPhone()->String{   //手机号格式化
         let num = self
         if num.characters.count < 11 {
             return ""
@@ -527,19 +527,19 @@ extension String {
         return phone
     }
     /// 是否包含中文
-    func isIncludeChinese() -> Bool {
+    public func isIncludeChinese() -> Bool {
         return LXTools.isIncludeChinese(str: self)
     }
     ///拨打电话
-    func PhoneCall(vc:UIViewController?){
+    public func PhoneCall(vc:UIViewController?){
         AlertPhoneCall(str: self, vc: vc)
     }
     
-    var utfData: Data? {
+    public var utfData: Data? {
         return self.data(using: .utf8)
     }
     
-    var attributedHtmlString: NSAttributedString? {
+    public var attributedHtmlString: NSAttributedString? {
         guard let data = self.utfData else {
             return nil
         }
@@ -555,7 +555,7 @@ extension String {
         }
     }
     
-    func isTrueIDNumber() -> Bool{
+    public func isTrueIDNumber() -> Bool{
         var value = self
         value = value.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         var length : Int = 0
@@ -663,13 +663,13 @@ extension String {
             return false
         }
     }
-    func getStringByRangeIntValue(Str : NSString,location : Int, length : Int) -> Int{
+    public func getStringByRangeIntValue(Str : NSString,location : Int, length : Int) -> Int{
         let a = Str.substring(with: NSRange(location: location, length: length))
         let intValue = (a as NSString).integerValue
         return intValue
     }
     
-    func isPurnInt() -> Bool {
+    public func isPurnInt() -> Bool {
         
         let scan: Scanner = Scanner(string: self)
         
@@ -679,7 +679,7 @@ extension String {
         
     }
     
-    func isPurnDouble() -> Bool {
+    public func isPurnDouble() -> Bool {
         
         let scan: Scanner = Scanner(string: self)
         
@@ -688,7 +688,7 @@ extension String {
         return scan.scanDouble(&val) && scan.isAtEnd
         
     }
-    func isPurnFloat() -> Bool {
+    public func isPurnFloat() -> Bool {
         
         let scan: Scanner = Scanner(string: self)
         
@@ -704,11 +704,11 @@ extension UIViewController {
 //        self.hero_dismissViewController()
 //    }
     
-    func pushToView(vc: UIViewController, ani: Bool = true) {
+    public func pushToView(vc: UIViewController, ani: Bool = true) {
         self.navigationController?.pushViewController(vc, animated: ani)
     }
     
-    func popBack(ani: Bool = true) {
+    public func popBack(ani: Bool = true) {
         self.navigationController?.popViewController(animated: ani)
     }
 }

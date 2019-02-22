@@ -10,37 +10,37 @@ import Foundation
 
 extension UILabel {
     ///设置文本内容
-    func msetText(text: String) -> Self {
+    public func msetText(text: String) -> Self {
         self.text = text
         return self
     }
     
     ///设置字体大小
-    func msetFont(size: CGFloat) -> Self {
+    public func msetFont(size: CGFloat) -> Self {
         self.font = UIFont.systemFont(ofSize: size)
         return self
     }
     
     ///设置粗体字
-    func msetBFont(size: CGFloat) -> Self {
+    public func msetBFont(size: CGFloat) -> Self {
         self.font = UIFont.boldSystemFont(ofSize: size)
         return self
     }
     
     ///设置字体颜色
-    func msetTextColor(color: UIColor?) -> Self {
+    public func msetTextColor(color: UIColor?) -> Self {
         self.textColor = color
         return self
     }
     
     ///设置文本对齐
-    func msetTextAlignment(ali: NSTextAlignment) -> Self {
+    public func msetTextAlignment(ali: NSTextAlignment) -> Self {
         self.textAlignment = ali
         return self
     }
     
     ///设置行数
-    func msetLineNumber(num: Int) -> Self {
+    public func msetLineNumber(num: Int) -> Self {
         let a = UILabel()
         self.numberOfLines = num
         return self
@@ -50,56 +50,56 @@ extension UILabel {
 
 extension UIButton {
     ///设置文本内容
-    func msetText(text: String, state: UIControlState) -> Self {
+    public func msetText(text: String, state: UIControlState) -> Self {
         self.setTitle(text, for: state)
         return self
     }
     
     ///设置图片
-    func msetImg(img: UIImage?, state: UIControlState) -> Self {
+    public func msetImg(img: UIImage?, state: UIControlState) -> Self {
         self.setImage(img, for: state)
         return self
     }
     
     ///设置图片
-    func msetBackgroundImage(img: UIImage?, state: UIControlState) -> Self {
+    public func msetBackgroundImage(img: UIImage?, state: UIControlState) -> Self {
         self.setBackgroundImage(img, for: state)
         return self
     }
     
     ///设置字体大小
-    func msetFont(size: CGFloat) -> Self {
+    public func msetFont(size: CGFloat) -> Self {
         self.titleLabel?.font = UIFont.systemFont(ofSize: size)
         return self
     }
     
     ///设置粗体字
-    func msetBFont(size: CGFloat) -> Self {
+    public func msetBFont(size: CGFloat) -> Self {
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: size)
         return self
     }
     
     ///设置字体颜色
-    func msetTextColor(color: UIColor?, state: UIControlState) -> Self {
+    public func msetTextColor(color: UIColor?, state: UIControlState) -> Self {
         self.setTitleColor(color, for: state)
         return self
     }
     
     ///设置选中
-    func msetSelected(selected: Bool) -> Self {
+    public func msetSelected(selected: Bool) -> Self {
         self.isSelected = selected
         return self
     }
     
     ///设置点击事件
-    func msetClick(target: Any?, action: Selector, event: UIControlEvents = UIControlEvents.touchUpInside) -> Self {
+    public func msetClick(target: Any?, action: Selector, event: UIControlEvents = UIControlEvents.touchUpInside) -> Self {
         let a = UIButton()
         self.addTarget(target, action: action, for: event)
         return self
     }
     
     ///设置水平对齐方式
-    func msetHAlignment(ali: UIControlContentHorizontalAlignment, imginsets: UIEdgeInsets = UIEdgeInsets.zero, contentinsets: UIEdgeInsets = UIEdgeInsets.zero) -> Self {
+    public func msetHAlignment(ali: UIControlContentHorizontalAlignment, imginsets: UIEdgeInsets = UIEdgeInsets.zero, contentinsets: UIEdgeInsets = UIEdgeInsets.zero) -> Self {
         self.contentHorizontalAlignment = ali
         self.imageEdgeInsets = imginsets
         self.contentEdgeInsets = contentinsets
@@ -109,17 +109,17 @@ extension UIButton {
 
 extension UIImageView {
     ///设置图片
-    func msetImg(img: UIImage) -> Self{
+    public func msetImg(img: UIImage) -> Self{
         self.image = img
         return self
     }
     ///设置图片
-    func msetImg(imgName: String) -> Self{
+    public func msetImg(imgName: String) -> Self{
         self.image = UIImage(named: imgName)
         return self
     }
     ///设置缩放方式
-    func msetContentMode(mode: ContentMode) -> Self{
+    public func msetContentMode(mode: ContentMode) -> Self{
         self.contentMode = mode
         return self
     }
@@ -127,62 +127,62 @@ extension UIImageView {
 
 extension UITextField {
     ///设置文本内容
-    func msetText(text: String) -> Self {
+    public func msetText(text: String) -> Self {
         self.text = text
         return self
     }
     
     ///设置字体大小
-    func msetFont(size: CGFloat) -> Self {
+    public func msetFont(size: CGFloat) -> Self {
         self.font = UIFont.systemFont(ofSize: size)
         return self
     }
     
     ///设置粗体字
-    func msetBFont(size: CGFloat) -> Self {
+    public func msetBFont(size: CGFloat) -> Self {
         self.font = UIFont.boldSystemFont(ofSize: size)
         return self
     }
     
     ///设置字体颜色
-    func msetTextColor(color: UIColor?) -> Self {
+    public func msetTextColor(color: UIColor?) -> Self {
         self.textColor = color
         return self
     }
     
     ///设置文本对齐
-    func msetTextAlignment(ali: NSTextAlignment) -> Self {
+    public func msetTextAlignment(ali: NSTextAlignment) -> Self {
         let a = UITextField()
         self.textAlignment = ali
         return self
     }
     
     ///设置默认文本
-    func msetPlaceholder(text: String) -> Self{
+    public func msetPlaceholder(text: String) -> Self{
         self.placeholder = text
         return self
     }
     
     ///修改placeHolder字体颜色
-    func msetPlaceholderColor(color: UIColor) -> Self{
+    public func msetPlaceholderColor(color: UIColor) -> Self{
         self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
         return self
     }
     
     ///设置密码隐藏
-    func msetSecureTextEntry(hidden: Bool) -> Self {
+    public func msetSecureTextEntry(hidden: Bool) -> Self {
         self.isSecureTextEntry = hidden
         return self
     }
     
     ///设置清除按钮显示模式
-    func msetClearButton(mode: ViewMode) -> Self{
+    public func msetClearButton(mode: ViewMode) -> Self{
         self.clearButtonMode = mode
         return self
     }
     
     ///输入框类型
-    enum tfType {
+    public enum tfType {
         case none //无限制
         case phone //手机
         case password  //密码
@@ -192,7 +192,7 @@ extension UITextField {
     }
     
     ///设置输入框类型
-    func msetInputType(type: tfType, delegate: UITextFieldDelegate, isEnd: Bool = false) -> Self{
+    public func msetInputType(type: tfType, delegate: UITextFieldDelegate, isEnd: Bool = false) -> Self{
         switch type {
         case .phone:
             self.msetDigits(digits: mDigits.number.rawValue).msetMaxlength(maxlength: 11).msetKeyboardType(kbtype: .namePhonePad)
@@ -214,27 +214,27 @@ extension UITextField {
 
 extension UIView {
     ///设置背景颜色
-    func msetBackColor(color: UIColor?) -> Self {
+    public func msetBackColor(color: UIColor?) -> Self {
         self.backgroundColor = color
         return self
     }
     
     ///设置边框
-    func msetBorder(color: UIColor?, width: CGFloat) -> Self {
+    public func msetBorder(color: UIColor?, width: CGFloat) -> Self {
         self.layer.borderColor = color?.cgColor
         self.layer.borderWidth = width
         return self
     }
     
     ///设置圆角
-    func msetCornerRadius(radius: CGFloat) -> Self {
+    public func msetCornerRadius(radius: CGFloat) -> Self {
         self.layer.cornerRadius = radius
         self.clipsToBounds = true
         return self
     }
     
     ///设置阴影
-    func msetShadow(color: UIColor) -> Self {
+    public func msetShadow(color: UIColor) -> Self {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = 0.4
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -243,7 +243,7 @@ extension UIView {
     }
     
     ///添加至view
-    func maddToView(view: UIView) -> Self {
+    public func maddToView(view: UIView) -> Self {
         view.addSubview(self)
         return self
     }

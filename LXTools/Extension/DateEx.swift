@@ -10,60 +10,60 @@ import Foundation
 
 extension Date {
     ///是否是今天
-    func isToday() -> Bool{
+    public func isToday() -> Bool{
         return Calendar.current.isDateInToday(self)
     }
     ///是否是明天
-    func isTomorrow() -> Bool{
+    public func isTomorrow() -> Bool{
         return Calendar.current.isDateInTomorrow(self)
     }
     ///是否是昨天
-    func isYesterday() -> Bool{
+    public func isYesterday() -> Bool{
         return Calendar.current.isDateInYesterday(self)
     }
     ///是否是周末
-    func isWeekend() -> Bool{
+    public func isWeekend() -> Bool{
         return Calendar.current.isDateInWeekend(self)
     }
     ///转字符串
-    func toString(format: String) -> String {
+    public func toString(format: String) -> String {
         let df = DateFormatter()
         df.dateFormat = format
         return df.string(from: self)
     }
     ///年
-    func year() -> Int {
+    public func year() -> Int {
         let c = Calendar.current
         let com = c.dateComponents([.year], from: self)
         return com.year!
     }
     ///月
-    func month() -> Int {
+    public func month() -> Int {
         let c = Calendar.current
         let com = c.dateComponents([.month], from: self)
         return com.month!
     }
     ///日
-    func day() -> Int {
+    public func day() -> Int {
         let c = Calendar.current
         let com = c.dateComponents([.day], from: self)
         return com.day!
     }
     ///时
-    func hour() -> Int {
+    public func hour() -> Int {
         let c = Calendar.current
         let com = c.dateComponents([.hour], from: self)
         return com.hour!
     }
     ///分
-    func minute() -> Int {
+    public func minute() -> Int {
         let c = Calendar.current
         let com = c.dateComponents([.minute], from: self)
         return com.minute!
     }
     
     ///日期增加
-    func addDate(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second : Int = 0) -> Date {
+    public func addDate(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second : Int = 0) -> Date {
         var com1 = DateComponents()
         com1.year = year
         com1.month = month
@@ -76,7 +76,7 @@ extension Date {
     }
     
     ///日期减少
-    func deffDate(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second : Int = 0) -> Date {
+    public func deffDate(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second : Int = 0) -> Date {
         var com1 = DateComponents()
         com1.year = -year
         com1.month = -month
@@ -89,7 +89,7 @@ extension Date {
     }
     
     ///计算日期相差天数
-    func daysBetweenDate(toDate: Date) -> Int {
+    public func daysBetweenDate(toDate: Date) -> Int {
         //给结束时间加1分钟，保证能计算出1天时间差
         var com1 = DateComponents()
         com1.minute = 1
@@ -99,7 +99,7 @@ extension Date {
     }
     
     ///计算日期相差分钟
-    func minsBetweenDate(toDate: Date) -> Int {
+    public func minsBetweenDate(toDate: Date) -> Int {
         //给结束时间加1秒
         var com1 = DateComponents()
         com1.second = 1

@@ -21,7 +21,7 @@ import MJRefresh
 extension MJRefreshController {
     
     ///初始化下拉刷新
-    func setupRefresh() {
+    public func setupRefresh() {
         if needDownRefresh {
             let header = MJRefreshNormalHeader()
             header.setRefreshingTarget(self, refreshingAction: #selector(downRefresh))
@@ -30,36 +30,36 @@ extension MJRefreshController {
     }
     
     ///移除下拉刷新
-    func removeRefresh() {
+    public func removeRefresh() {
         mjScrollView.mj_header = nil
     }
     
     ///结束下拉刷新
-    func headerEndRefreshing() {
+    public func headerEndRefreshing() {
         if needDownRefresh {
             mjScrollView.mj_header.endRefreshing()
         }
     }
     ///结束加载更多
-    func footerEndRefreshing() {
+    public func footerEndRefreshing() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
             mjScrollView.mj_footer.endRefreshing()
         }
     }
     ///结束加载更多并显示无更多数据
-    func footerEndRefreshingWithNoMoreData() {
+    public func footerEndRefreshingWithNoMoreData() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
             mjScrollView.mj_footer.endRefreshingWithNoMoreData()
         }
     }
     ///重置无更多数据状态
-    func footerResetNoMoreData() {
+    public func footerResetNoMoreData() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
             mjScrollView.mj_footer.resetNoMoreData()
         }
     }
     ///设置加载更多
-    func setFooter() {
+    public func setFooter() {
         if needUpRefresh {
             let footer = MJRefreshAutoStateFooter()
             footer.setRefreshingTarget(self, refreshingAction: #selector(upRefresh))
