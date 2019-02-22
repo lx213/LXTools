@@ -111,6 +111,7 @@
 		3C065AA2221E815E00F1C9C7 = {
 			isa = PBXGroup;
 			children = (
+				3C065B00221F8BA800F1C9C7 /* Example */,
 				3C065AAD221E815F00F1C9C7 /* LXTools */,
 				3C065AAC221E815F00F1C9C7 /* Products */,
 				F7D81316A4364EAF92AAA180 /* Pods */,
@@ -131,27 +132,12 @@
 		3C065AAD221E815F00F1C9C7 /* LXTools */ = {
 			isa = PBXGroup;
 			children = (
-				3C065ADD221E8C4000F1C9C7 /* tools */,
-				3C065AAE221E815F00F1C9C7 /* AppDelegate.swift */,
-				3C065AB0221E815F00F1C9C7 /* ViewController.swift */,
-				3C065AB2221E815F00F1C9C7 /* Main.storyboard */,
-				3C065AB5221E816100F1C9C7 /* Assets.xcassets */,
-				3C065AB7221E816100F1C9C7 /* LaunchScreen.storyboard */,
-				3C065ABA221E816100F1C9C7 /* Info.plist */,
-				3C065ADC221E84B000F1C9C7 /* Header.h */,
-			);
-			path = LXTools;
-			sourceTree = "<group>";
-		};
-		3C065ADD221E8C4000F1C9C7 /* tools */ = {
-			isa = PBXGroup;
-			children = (
 				3C065AF7221E9FDB00F1C9C7 /* delegate */,
 				3C065AEE221E91F300F1C9C7 /* basic */,
 				3C065AE9221E8DFB00F1C9C7 /* Log */,
 				3C065ADE221E8D8C00F1C9C7 /* Extension */,
 			);
-			path = tools;
+			path = LXTools;
 			sourceTree = "<group>";
 		};
 		3C065ADE221E8D8C00F1C9C7 /* Extension */ = {
@@ -191,6 +177,20 @@
 				3C065AF9221E9FF000F1C9C7 /* SetNoDataView.swift */,
 			);
 			path = delegate;
+			sourceTree = "<group>";
+		};
+		3C065B00221F8BA800F1C9C7 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				3C065AAE221E815F00F1C9C7 /* AppDelegate.swift */,
+				3C065AB0221E815F00F1C9C7 /* ViewController.swift */,
+				3C065AB2221E815F00F1C9C7 /* Main.storyboard */,
+				3C065AB5221E816100F1C9C7 /* Assets.xcassets */,
+				3C065AB7221E816100F1C9C7 /* LaunchScreen.storyboard */,
+				3C065ABA221E816100F1C9C7 /* Info.plist */,
+				3C065ADC221E84B000F1C9C7 /* Header.h */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		F7D81316A4364EAF92AAA180 /* Pods */ = {
@@ -596,14 +596,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ3B6RNJ2C;
-				INFOPLIST_FILE = LXTools/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Example/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -616,14 +616,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ3B6RNJ2C;
-				INFOPLIST_FILE = LXTools/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Example/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
