@@ -23,6 +23,8 @@
 		3C065AFD221E9FF100F1C9C7 /* SetNoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AF9221E9FF000F1C9C7 /* SetNoDataView.swift */; };
 		3C065AFE221E9FF100F1C9C7 /* SetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AFA221E9FF000F1C9C7 /* SetErrorView.swift */; };
 		3C065AFF221E9FF100F1C9C7 /* KrtTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065AFB221E9FF100F1C9C7 /* KrtTFDelegate.swift */; };
+		3C065B3F221FE9C200F1C9C7 /* SKPhotoBrowserHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B3E221FE9C200F1C9C7 /* SKPhotoBrowserHelp.swift */; };
+		3C065B43221FEB9B00F1C9C7 /* PTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B42221FEB9B00F1C9C7 /* PTextView.swift */; };
 		8296FC01E6BFB3F66CD5CC14 /* Pods_LXTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		3C065AF9221E9FF000F1C9C7 /* SetNoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNoDataView.swift; sourceTree = "<group>"; };
 		3C065AFA221E9FF000F1C9C7 /* SetErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetErrorView.swift; sourceTree = "<group>"; };
 		3C065AFB221E9FF100F1C9C7 /* KrtTFDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrtTFDelegate.swift; sourceTree = "<group>"; };
+		3C065B3E221FE9C200F1C9C7 /* SKPhotoBrowserHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserHelp.swift; sourceTree = "<group>"; };
+		3C065B42221FEB9B00F1C9C7 /* PTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTextView.swift; sourceTree = "<group>"; };
 		4DE3B0F754BCF6C134DBAF0C /* Pods-LXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.debug.xcconfig"; sourceTree = "<group>"; };
 		66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CD371FB274082989A616E5 /* Pods-LXTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +134,8 @@
 		3C065AAD221E815F00F1C9C7 /* LXTools */ = {
 			isa = PBXGroup;
 			children = (
-				3C065B01221FCAAE00F1C9C7 /* header */,
+				3C065B40221FEB8300F1C9C7 /* View */,
+				3C065B3D221FE98D00F1C9C7 /* image */,
 				3C065AF7221E9FDB00F1C9C7 /* delegate */,
 				3C065AEE221E91F300F1C9C7 /* basic */,
 				3C065AE9221E8DFB00F1C9C7 /* Log */,
@@ -181,6 +186,7 @@
 		3C065B00221F8BA800F1C9C7 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				3C065B01221FCAAE00F1C9C7 /* header */,
 				3C065AAE221E815F00F1C9C7 /* AppDelegate.swift */,
 				3C065AB0221E815F00F1C9C7 /* ViewController.swift */,
 				3C065AB2221E815F00F1C9C7 /* Main.storyboard */,
@@ -197,6 +203,30 @@
 				3C065ADC221E84B000F1C9C7 /* Header.h */,
 			);
 			path = header;
+			sourceTree = "<group>";
+		};
+		3C065B3D221FE98D00F1C9C7 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				3C065B3E221FE9C200F1C9C7 /* SKPhotoBrowserHelp.swift */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		3C065B40221FEB8300F1C9C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C065B41221FEB9B00F1C9C7 /* 带placeholder的textview */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C065B41221FEB9B00F1C9C7 /* 带placeholder的textview */ = {
+			isa = PBXGroup;
+			children = (
+				3C065B42221FEB9B00F1C9C7 /* PTextView.swift */,
+			);
+			path = "带placeholder的textview";
 			sourceTree = "<group>";
 		};
 		F7D81316A4364EAF92AAA180 /* Pods */ = {
@@ -416,6 +446,7 @@
 			files = (
 				3C065AFC221E9FF100F1C9C7 /* MJRefreshController.swift in Sources */,
 				3C065AF6221E9F5500F1C9C7 /* DefaultCheck.swift in Sources */,
+				3C065B3F221FE9C200F1C9C7 /* SKPhotoBrowserHelp.swift in Sources */,
 				3C065AF4221E9AE800F1C9C7 /* BaseFunc.swift in Sources */,
 				3C065AB1221E815F00F1C9C7 /* ViewController.swift in Sources */,
 				3C065AE8221E8D8C00F1C9C7 /* AllExtension.swift in Sources */,
@@ -427,6 +458,7 @@
 				3C065AE5221E8D8C00F1C9C7 /* DateEx.swift in Sources */,
 				3C065AFD221E9FF100F1C9C7 /* SetNoDataView.swift in Sources */,
 				3C065AE4221E8D8C00F1C9C7 /* UIViewEx.swift in Sources */,
+				3C065B43221FEB9B00F1C9C7 /* PTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +643,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/header/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Example/header/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,7 +663,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lx.LXTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = LXTools/header/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Example/header/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
