@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.0.4'
+    s.version      = '0.0.5'
     s.swift_version = '4.0'
     s.summary      = 'a cardview on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'
