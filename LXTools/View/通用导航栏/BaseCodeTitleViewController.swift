@@ -32,12 +32,12 @@ open class BaseCodeTitleViewController: UIViewController,BaseTitleViewDelegate {
         addShadow(view: btv, y: getTH(vc: self))
     }
     
-    public func back() {
+    open func back() {
         self.navigationController?.popViewController(animated: true)
         
     }
     
-    public func rightBtnAction() {
+    open func rightBtnAction() {
         print("rightAciton")
     }
     ///设置标题

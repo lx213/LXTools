@@ -24,12 +24,12 @@ open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
         view.bringSubview(toFront: btv)
     }
     
-    public func back() {
+    open func back() {
         view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
     }
     
-    public func rightBtnAction() {
+    open func rightBtnAction() {
         
     }
     ///设置标题

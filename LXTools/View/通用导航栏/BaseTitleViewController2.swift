@@ -28,12 +28,12 @@ open class BaseTitleViewController2: UIViewController,BaseTitleViewDelegate {
         addShadow(view: btv, y: btv.zj_height)
     }
     
-    public func back() {
+    open func back() {
         view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
     }
     
-    public func rightBtnAction() {
+    open func rightBtnAction() {
         
     }
     ///设置标题

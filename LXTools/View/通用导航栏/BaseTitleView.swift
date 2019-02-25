@@ -29,7 +29,7 @@ import SnapKit
 
     var leftBtn:UIButton = {
         let b = UIButton()
-        b.setImage(#imageLiteral(resourceName: "p02_01"), for: .normal)
+        b.setImage(UIImage(named: "back"), for: .normal)
         b.contentHorizontalAlignment = .left
         b.sizeToFit()
         return b

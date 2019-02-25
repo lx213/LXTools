@@ -32,6 +32,7 @@
 		3C065B5822238DB600F1C9C7 /* BaseTitleViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B5422238DB600F1C9C7 /* BaseTitleViewController2.swift */; };
 		3C065B5922238DB600F1C9C7 /* BaseCodeTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B5522238DB600F1C9C7 /* BaseCodeTitleViewController.swift */; };
 		3C065B5A22238DB600F1C9C7 /* BaseTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B5622238DB600F1C9C7 /* BaseTitleViewController.swift */; };
+		3C065B5F22239E4000F1C9C7 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C065B5E22239E3F00F1C9C7 /* back@2x.png */; };
 		8296FC01E6BFB3F66CD5CC14 /* Pods_LXTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		3C065B5422238DB600F1C9C7 /* BaseTitleViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTitleViewController2.swift; sourceTree = "<group>"; };
 		3C065B5522238DB600F1C9C7 /* BaseCodeTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCodeTitleViewController.swift; sourceTree = "<group>"; };
 		3C065B5622238DB600F1C9C7 /* BaseTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTitleViewController.swift; sourceTree = "<group>"; };
+		3C065B5E22239E3F00F1C9C7 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		4DE3B0F754BCF6C134DBAF0C /* Pods-LXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.debug.xcconfig"; sourceTree = "<group>"; };
 		66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CD371FB274082989A616E5 /* Pods-LXTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3C065B00221F8BA800F1C9C7 /* Example */,
+				3C065B5B22239D3D00F1C9C7 /* Assets */,
 				3C065AAD221E815F00F1C9C7 /* LXTools */,
 				3C065AAC221E815F00F1C9C7 /* Products */,
 				F7D81316A4364EAF92AAA180 /* Pods */,
@@ -284,6 +287,14 @@
 			path = "通用导航栏";
 			sourceTree = "<group>";
 		};
+		3C065B5B22239D3D00F1C9C7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3C065B5E22239E3F00F1C9C7 /* back@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		F7D81316A4364EAF92AAA180 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C065AB9221E816100F1C9C7 /* LaunchScreen.storyboard in Resources */,
+				3C065B5F22239E4000F1C9C7 /* back@2x.png in Resources */,
 				3C065AB6221E816100F1C9C7 /* Assets.xcassets in Resources */,
 				3C065AB4221E815F00F1C9C7 /* Main.storyboard in Resources */,
 			);
