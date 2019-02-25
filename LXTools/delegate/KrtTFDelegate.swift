@@ -12,7 +12,7 @@ open class KrtTFDelegate: NSObject,UITextFieldDelegate {
     
     var tfs = [UITextField]()
     
-    init(tfs: [UITextField]) {
+    public init(tfs: [UITextField]) {
         super.init()
         self.tfs = tfs
     }

@@ -10,8 +10,8 @@ import Foundation
 
 open class PTextView: UIView,UITextViewDelegate {
     
-    public var tv = UITextView()
-    public var ptv = UITextView()
+    var tv = UITextView()
+    var ptv = UITextView()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,7 +43,7 @@ open class PTextView: UIView,UITextViewDelegate {
         return tv.text
     }
     
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         if textView == tv {
             ptv.isHidden = tv.text != ""
         }
