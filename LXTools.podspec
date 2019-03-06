@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.0.7'
+    s.version      = '0.0.8'
     s.swift_version = '4.0'
-    s.summary      = 'a cardview on iOS'
+    s.summary      = 'Tools on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'
     s.license      = 'MIT'
     s.authors      = {'lx123' => '381806973@qq.com'}
     s.platform     = :ios, '8.0'
     s.source       = {:git => 'https://github.com/lx213/LXTools.git', :tag => s.version}
-    s.source_files = 'LXTools/*'
+    s.source_files = 'LXTools/**/*'
     s.resource_bundles = {
 	'LXAssets' => ['Assets/*']
 	}

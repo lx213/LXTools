@@ -396,6 +396,10 @@ extension UIView {
 
 extension String {
     
+    public func trim() -> String{
+        return self.trimmingCharacters(in: .whitespaces)
+    }
+    
     public func toDate(format: String) -> Date? {
         let df = DateFormatter()
         df.dateFormat = format
