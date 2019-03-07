@@ -80,7 +80,7 @@ open class CardBannerView: UIView,UICollectionViewDataSource,UICollectionViewDel
         collect.showsHorizontalScrollIndicator = false
         collect.showsVerticalScrollIndicator = false
         collect.decelerationRate = 0.1
-        collect.isPagingEnabled = iscycles
+//        collect.isPagingEnabled = iscycles
         self.addSubview(collect)
         
         touchView.frame = self.frame
@@ -90,25 +90,25 @@ open class CardBannerView: UIView,UICollectionViewDataSource,UICollectionViewDel
         let lswipe = UISwipeGestureRecognizer(target: self, action: #selector(leftswipe(_:)))
         lswipe.direction = .left
         let click = UITapGestureRecognizer(target: self, action: #selector(clickAction(_:)))
-        touchView.isUserInteractionEnabled = false
+        touchView.isUserInteractionEnabled = isCycles
         touchView.addGestureRecognizer(lswipe)
         touchView.addGestureRecognizer(rswipe)
         touchView.addGestureRecognizer(click)
     }
     
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if isCycles {
-            centerIndex = Int(scrollView.contentOffset.x / sw)
-            print(centerIndex)
-            if centerIndex < dataCount {
-                collect.contentOffset.x = CGFloat(dataCount+centerIndex) * sw
-                centerIndex += dataCount
-            }else if centerIndex >= 2*dataCount {
-                collect.contentOffset.x = CGFloat(centerIndex-dataCount) * sw
-                centerIndex -= dataCount
-            }
-        }
-    }
+//    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        if isCycles {
+//            centerIndex = Int(scrollView.contentOffset.x / sw)
+//            print(centerIndex)
+//            if centerIndex < dataCount {
+//                collect.contentOffset.x = CGFloat(dataCount+centerIndex) * sw
+//                centerIndex += dataCount
+//            }else if centerIndex >= 2*dataCount {
+//                collect.contentOffset.x = CGFloat(centerIndex-dataCount) * sw
+//                centerIndex -= dataCount
+//            }
+//        }
+//    }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         timeCount = 0
