@@ -10,8 +10,8 @@ import UIKit
 
 open class MCollectionViewCell: UICollectionViewCell {
 
-    var img = UIImageView()
-    var title =  UILabel()
+    public var img = UIImageView()
+    public var title =  UILabel()
     override public init(frame: CGRect) {
         super.init(frame:frame)
         

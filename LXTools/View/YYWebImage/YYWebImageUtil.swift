@@ -46,4 +46,10 @@ open class YYWebImageUtil {
 //        KrtLog.debug(message: nurl)
         imgv?.yy_setImage(with: URL(string: nurl), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], completion: nil)
     }
+    
+    public static func loadImgCornersCycle(imgv: UIImageView?, url: String, placeholder: UIImage?,byRoundCornerRadius: CGFloat, corners: UIRectCorner, borderWidth: CGFloat, borderColor: UIColor, borderLineJoin: CGLineJoin) {
+        imgv?.yy_setImage(with: URL(string: url), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], progress: nil, transform: { (image, url) -> UIImage? in
+            return image.yy_image(byRoundCornerRadius: byRoundCornerRadius, corners: corners, borderWidth: borderWidth, borderColor: borderColor, borderLineJoin: borderLineJoin)
+        }, completion: nil)
+    }
 }

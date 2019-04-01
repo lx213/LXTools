@@ -13,7 +13,7 @@ open class LineLayout: UICollectionViewFlowLayout{
     var itemH: CGFloat = 80
     var row = 2
     var col = 4
-    var icount: Int?
+    public var icount: Int?
     
     lazy var insetw: CGFloat = {
         return 0

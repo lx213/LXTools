@@ -15,36 +15,40 @@ import SnapKit
 
 @IBDesignable open class BaseTitleView: UIView {
     
-    @IBInspectable var backgColor: UIColor? = UIColor.white
-    @IBInspectable var titleFont:CGFloat = 18
-    @IBInspectable var title:String = "标题"
-    @IBInspectable var rightTit:String?
-    @IBInspectable var rightImg:UIImage?
-    @IBInspectable var rightFont:CGFloat = 14
-    @IBInspectable var hintColor:UIColor = UIColor.black
-    @IBInspectable var canBack:Bool = true
-    @IBInspectable var rightBtnHidden = false
+    @IBInspectable public var backgColor: UIColor? = UIColor.white
+    @IBInspectable public var leftBtnW:CGFloat = 50
+    @IBInspectable public var leftBtnH:CGFloat = 70
+    @IBInspectable public var rightBtnW:CGFloat = 50
+    @IBInspectable public var rightBtnH:CGFloat = 70
+    @IBInspectable public var titleFont:CGFloat = 18
+    @IBInspectable public var title:String = "标题"
+    @IBInspectable public var rightTit:String?
+    @IBInspectable public var rightImg:UIImage?
+    @IBInspectable public var rightFont:CGFloat = 14
+    @IBInspectable public var hintColor:UIColor = UIColor.black
+    @IBInspectable public var canBack:Bool = true
+    @IBInspectable public var rightBtnHidden = false
     
-    weak var delegate:BaseTitleViewDelegate?
+    public weak var delegate:BaseTitleViewDelegate?
 
-    var leftBtn:UIButton = {
+    public var leftBtn:UIButton = {
         let b = UIButton()
         b.setImage(UIImage(named: "back"), for: .normal)
         b.contentHorizontalAlignment = .left
         b.sizeToFit()
         return b
     }()
-    var titleLab:UILabel = {
+    public var titleLab:UILabel = {
         let l = UILabel()
         l.textColor = UIColor.white
         l.textAlignment = .center
         return l
     }()
-    var rightBtn = UIButton()
-    var backView = UIView()
+    public var rightBtn = UIButton()
+    public var backView = UIView()
     
     
-    var myButton: UIButton!
+    public var myButton: UIButton!
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,13 +77,15 @@ import SnapKit
         leftBtn.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(16)
             make.centerY.equalTo(titleLab)
-            make.width.equalTo(50)
-            make.height.equalTo(leftBtn.frame.size.height + 20)
+            make.width.equalTo(leftBtnW)
+            make.height.equalTo(backView)
         }
         leftBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         rightBtn.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-16)
             make.centerY.equalTo(titleLab)
+            make.width.equalTo(rightBtnW)
+            make.height.equalTo(rightBtnH)
         }
         rightBtn.addTarget(self, action: #selector(rightAction), for: .touchUpInside)
     }

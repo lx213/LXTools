@@ -10,7 +10,7 @@ import UIKit
 
 open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
 
-    @IBOutlet weak var btv: BaseTitleView!
+    @IBOutlet public weak var btv: BaseTitleView!
     override open func viewDidLoad() {
         super.viewDidLoad()
         btv.delegate = self
@@ -26,7 +26,11 @@ open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
     
     open func back() {
         view.endEditing(true)
-        self.navigationController?.popViewController(animated: true)
+        if let navigationController = navigationController, navigationController.viewControllers.first != self {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     open func rightBtnAction() {

@@ -14,10 +14,12 @@ import AVFoundation
 // MARK: 图片设置圆角
 extension UIImage {
     
+    ///圆形图片
     public func roundImage(byRoundingCorners: UIRectCorner = UIRectCorner.allCorners, cornerRadi: CGFloat) -> UIImage? {
         return roundImage(byRoundingCorners: byRoundingCorners, cornerRadii: CGSize(width: cornerRadi, height: cornerRadi))
     }
     
+    ///圆形图片
     public func roundImage(byRoundingCorners: UIRectCorner = UIRectCorner.allCorners, cornerRadii: CGSize) -> UIImage? {
         
         let imageRect = CGRect(origin: CGPoint.zero, size: size)
@@ -39,13 +41,7 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
-}
-
-
-extension UIImage {
-    /**
-     *  重设图片大小
-     */
+    ///重设图片大小
     public func reSizeImage(reSize:CGSize)->UIImage {
         
         UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale)
@@ -56,70 +52,17 @@ extension UIImage {
         return reSizeImage;
     }
     
-    /**
-     *  等比率缩放
-     */
+    /// 等比率缩放
     public func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
         
         return reSizeImage(reSize: reSize)
     }
-    public func imageWithColor(color: UIColor) -> UIImage {
-        
-        let rect = CGRect(x: 0, y: 0, width: 1.0, height: 1.0)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        return image
-    }
-}
-
-extension UIImageView {
     
-    /// 创建标注类型图片
-    public convenience init(pointImgUrl: String) {
-        self.init()
-        frame = CGRect(x: 4, y: 4, width: 22, height: 20)
-        contentMode = .scaleAspectFit
-        self.yy_setImage(with: URL(string: pointImgUrl), placeholder: UIImage())
-    }
-    
-    /// 创建标注类型图片
-    public convenience init(RoundpointImgUrl: String) {
-        self.init()
-        frame = CGRect(x: 4, y: 4, width: 20, height: 20)
-        contentMode = .scaleAspectFit
-        self.yy_setImage(with: URL(string: RoundpointImgUrl), placeholder: UIImage())
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
-    }
-    
-    /// 创建标注类型图片
-    public convenience init(pointImgName: String) {
-        self.init()
-        frame = CGRect(x: 4, y: 4, width: 22, height: 20)
-        contentMode = .scaleAspectFit
-        image = UIImage(named: pointImgName)
-    }
-    
-    /// 创建标注底图
-    public convenience init(pointBackImg: Int) {
-        self.init()
-        frame = CGRect(x: 0, y: 0, width: 30, height: 42)
-        contentMode = .scaleAspectFit
-        image = UIImage(named: "norpoint")
-    }
-    
-}
-
-extension UIImage{
     /// 创建纯色image
-    public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+    public class func imageWithColor(color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) -> UIImage {
         
-        let rect = CGRect(x:0, y:0, width:size.width == 0 ? 1.0 : size.width, height:size.height == 0 ? 1.0 : size.height)
+        let rect = CGRect(x:0, y:0, width:size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         color.setFill()
         UIRectFill(rect)

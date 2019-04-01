@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol SetNoDataView {
-    func setNoDataView(pview: UIView)
+    func setNoDataView(pview: UIView, imgName: String)
     func hideNoDataView(pview: UIView)
 }
 

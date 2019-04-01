@@ -11,6 +11,12 @@ import SKPhotoBrowser
 import YYWebImage
 
 public struct SKPhotoItem {
+    
+    public init(url: String, caption: String) {
+        self.url = url
+        self.caption = caption
+    }
+    
     var url = ""
     var caption = ""
 }
@@ -29,5 +35,32 @@ open class SKPhotoBrowserHelp {
         let browser = SKPhotoBrowser(photos: imgs, initialPageIndex: index)
         let vc = topViewController()
         vc?.present(browser, animated: true, completion: nil)
+    }
+}
+
+open class CustomYYCache: SKImageCacheable {
+    public func removeAllImages() {
+        
+    }
+    
+    public func imageForKey(_ key: String) -> UIImage? {
+        guard let image = cache.getImageForKey(key) else {
+            return nil
+        }
+        return image
+    }
+    
+    public func setImage(_ image: UIImage, forKey key: String) {
+        cache.setImage(image, forKey: key)
+    }
+    
+    public func removeImageForKey(_ key: String) {
+        cache.removeImage(forKey: key)
+    }
+    
+    var cache: YYImageCache
+    
+    init() {
+        cache = YYWebImageManager.shared().cache!
     }
 }

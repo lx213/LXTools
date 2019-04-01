@@ -24,7 +24,7 @@ open class CardBannerView: UIView,UICollectionViewDataSource,UICollectionViewDel
     var itemH:CGFloat!
     var leftPadding:CGFloat = 0
     /// 是否循环
-    var isCycles = false
+    public var isCycles = false
     /// 间距
     var LineSpacing: CGFloat!
     /// 触控view

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 open class BaseCodeTitleViewController: UIViewController,BaseTitleViewDelegate {
 
-    var btv = BaseTitleView()
+    public var btv = BaseTitleView()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,12 @@ open class BaseCodeTitleViewController: UIViewController,BaseTitleViewDelegate {
     }
     
     open func back() {
-        self.navigationController?.popViewController(animated: true)
+        view.endEditing(true)
+        if let navigationController = navigationController, navigationController.viewControllers.first != self {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
         
     }
     

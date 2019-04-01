@@ -10,7 +10,7 @@ import Foundation
 import SnapKit
 
 public protocol SetErrorView {
-    func setErrorView(pview: UIView, action: Selector)
+    func setErrorView(pview: UIView, action: Selector, imgName: String)
     func hideErrorView(pview: UIView)
 }
 
