@@ -8,24 +8,24 @@
 
 import Foundation
 open class DefaultCheck{
-    var d = UserDefaults.standard
+    
     public func HasDefault(_ DefaultString: String) ->Bool {
         
-        if let _: Any = d.object(forKey: DefaultString){
+        if let _: Any = UserDefaults.standard.object(forKey: DefaultString){
         return true
         }
         return false
     }
     public func GetDefault(_ DefaultString:String)->Any{
-        return  d.object(forKey: DefaultString)!
+        return  UserDefaults.standard.object(forKey: DefaultString)!
        
     }
     public func SetDefault(_ obj:Any,key:String){
-        d.set(obj, forKey: key)
+        UserDefaults.standard.set(obj, forKey: key)
     }
     public func DelDefault(_ key:String){
         
-        d.removeObject(forKey: key)
-        d.synchronize()
+        UserDefaults.standard.removeObject(forKey: key)
+        UserDefaults.standard.synchronize()
     }
 }

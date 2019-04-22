@@ -46,6 +46,25 @@ extension UIView {
         return self
     }
     
+    ///获取所在的viewController
+    public var getCurrentVC: UIViewController? {
+        var next = superview
+        while (next != nil) {
+            let nextResponder = next?.next
+            if (nextResponder is UIViewController) {
+                return nextResponder as? UIViewController
+            }
+            next = next?.superview
+        }
+        return nil
+    }
+    
+    ///设置隐藏
+    public func msetHidden(hidden: Bool) -> Self {
+        self.isHidden = hidden
+        return self
+    }
+    
     ///旋转
     public func rotate360DegreeWithImageView(duration:CFTimeInterval , repeatCount :Float ) {
         
