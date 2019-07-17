@@ -45,6 +45,18 @@ extension UIButton {
         return self
     }
     
+    ///设置字体颜色
+    public func msetTextColor(color: Int, state: UIControlState) -> Self {
+        self.setTitleColor(UIColor(hex: color), for: state)
+        return self
+    }
+    
+    ///设置字体颜色
+    public func msetTextColor(color: String, state: UIControlState) -> Self {
+        self.setTitleColor(UIColor(hexString: color), for: state)
+        return self
+    }
+    
     ///设置选中
     public func msetSelected(selected: Bool) -> Self {
         self.isSelected = selected

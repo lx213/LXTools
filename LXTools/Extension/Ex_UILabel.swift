@@ -32,6 +32,18 @@ extension UILabel {
         return self
     }
     
+    ///设置字体颜色
+    public func msetTextColor(color: Int) -> Self {
+        self.textColor = UIColor(hex: color)
+        return self
+    }
+    
+    ///设置字体颜色
+    public func msetTextColor(color: String) -> Self {
+        self.textColor = UIColor(hexString: color)
+        return self
+    }
+    
     ///设置文本对齐
     public func msetTextAlignment(ali: NSTextAlignment) -> Self {
         self.textAlignment = ali

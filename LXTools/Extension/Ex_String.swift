@@ -151,10 +151,6 @@ extension String {
         }
         return phone
     }
-    /// 是否包含中文
-    public func isIncludeChinese() -> Bool {
-        return LXTools.isIncludeChinese(str: self)
-    }
     ///拨打电话
     public func PhoneCall(vc:UIViewController?){
         AlertPhoneCall(str: self, vc: vc)
@@ -321,6 +317,47 @@ extension String {
         var val:Float = 0
         
         return scan.scanFloat(&val) && scan.isAtEnd
+        
+    }
+    
+    ///是否包含中文
+    public func isIncludeChinese() -> Bool {
+        for (_,value) in self.characters.enumerated() {
+            if ("\u{4E00}" <= value && value <= "\u{9FA5}") {
+                return true
+            }
+        }
+        return false
+    }
+    
+    // MARK: - 获取联系人姓名首字母(传入汉字字符串, 返回大写拼音首字母)
+    public func getFirstLetterFromString() -> (String) {
+        // 注意,这里一定要转换成可变字符串
+        let mutableString = NSMutableString.init(string: self)
+        // 将中文转换成带声调的拼音
+        CFStringTransform(mutableString as CFMutableString, nil, kCFStringTransformToLatin, false)
+        // 去掉声调(用此方法大大提高遍历的速度)
+        let pinyinString = mutableString.folding(options: String.CompareOptions.diacriticInsensitive, locale: NSLocale.current)
+        // 将拼音首字母装换成大写
+        let strPinYin = polyphoneStringHandle(nameString: self, pinyinString: pinyinString).uppercased()
+        // 截取大写首字母
+        let firstString = strPinYin.substring(to: strPinYin.index(strPinYin.startIndex, offsetBy:1))
+        // 判断姓名首位是否为大写字母
+        let regexA = "^[A-Z]$"
+        let predA = NSPredicate.init(format: "SELF MATCHES %@", regexA)
+        return predA.evaluate(with: firstString) ? firstString : "#"
+        
+    }
+    
+    /// 多音字处理
+    func polyphoneStringHandle(nameString:String, pinyinString:String) -> String {
+        if nameString.hasPrefix("长") {return "chang"}
+        if nameString.hasPrefix("沈") {return "shen"}
+        if nameString.hasPrefix("厦") {return "xia"}
+        if nameString.hasPrefix("地") {return "di"}
+        if nameString.hasPrefix("重") {return "chong"}
+        if nameString.hasPrefix("曾") {return "zeng"}
+        return pinyinString
         
     }
 }

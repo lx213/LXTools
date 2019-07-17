@@ -7,23 +7,30 @@
 //
 
 import Foundation
-open class DefaultCheck{
+open class KrtDefaultHelp{
     
-    public func HasDefault(_ DefaultString: String) ->Bool {
+    ///是否存在键值
+    public static func HasDefault(_ DefaultString: String) ->Bool {
         
         if let _: Any = UserDefaults.standard.object(forKey: DefaultString){
         return true
         }
         return false
     }
-    public func GetDefault(_ DefaultString:String)->Any{
+    
+    ///读取存储内容
+    public static func GetDefault(_ DefaultString:String)->Any{
         return  UserDefaults.standard.object(forKey: DefaultString)!
        
     }
-    public func SetDefault(_ obj:Any,key:String){
+    
+    ///设置存储内容
+    public static func SetDefault(_ obj:Any,key:String){
         UserDefaults.standard.set(obj, forKey: key)
     }
-    public func DelDefault(_ key:String){
+    
+    ///删除存储内容
+    public static func DelDefault(_ key:String){
         
         UserDefaults.standard.removeObject(forKey: key)
         UserDefaults.standard.synchronize()

@@ -17,9 +17,35 @@ extension UIView {
         return self
     }
     
+    ///设置背景颜色
+    public func msetBackColor(color: Int) -> Self {
+        self.backgroundColor = UIColor(hex: color)
+        return self
+    }
+    
+    ///设置背景颜色
+    public func msetBackColor(color: String) -> Self {
+        self.backgroundColor = UIColor(hexString: color)
+        return self
+    }
+    
     ///设置边框
     public func msetBorder(color: UIColor?, width: CGFloat) -> Self {
         self.layer.borderColor = color?.cgColor
+        self.layer.borderWidth = width
+        return self
+    }
+    
+    ///设置边框
+    public func msetBorder(color: Int, width: CGFloat) -> Self {
+        self.layer.borderColor = UIColor(hex: color)?.cgColor
+        self.layer.borderWidth = width
+        return self
+    }
+    
+    ///设置边框
+    public func msetBorder(color: String, width: CGFloat) -> Self {
+        self.layer.borderColor = UIColor(hexString: color)?.cgColor
         self.layer.borderWidth = width
         return self
     }
@@ -34,6 +60,24 @@ extension UIView {
     ///设置阴影
     public func msetShadow(color: UIColor) -> Self {
         self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 4
+        return self
+    }
+    
+    ///设置阴影
+    public func msetShadow(color: Int) -> Self {
+        self.layer.shadowColor = UIColor(hex: color)?.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 4
+        return self
+    }
+    
+    ///设置阴影
+    public func msetShadow(color: String) -> Self {
+        self.layer.shadowColor = UIColor(hexString: color)?.cgColor
         self.layer.shadowOpacity = 0.4
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 4

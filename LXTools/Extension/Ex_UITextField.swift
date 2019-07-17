@@ -36,6 +36,18 @@ extension UITextField {
         return self
     }
     
+    ///设置字体颜色
+    public func msetTextColor(color: Int) -> Self {
+        self.textColor = UIColor(hex: color)
+        return self
+    }
+    
+    ///设置字体颜色
+    public func msetTextColor(color: String) -> Self {
+        self.textColor = UIColor(hexString: color)
+        return self
+    }
+    
     ///设置文本对齐
     public func msetTextAlignment(ali: NSTextAlignment) -> Self {
         _ = UITextField()
@@ -52,6 +64,18 @@ extension UITextField {
     ///修改placeHolder字体颜色
     public func msetPlaceholderColor(color: UIColor) -> Self{
         self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
+        return self
+    }
+    
+    ///修改placeHolder字体颜色
+    public func msetPlaceholderColor(color: Int) -> Self{
+        self.setValue(UIColor(hex: color), forKeyPath: "_placeholderLabel.textColor")
+        return self
+    }
+    
+    ///修改placeHolder字体颜色
+    public func msetPlaceholderColor(color: String) -> Self{
+        self.setValue(UIColor(hexString: color), forKeyPath: "_placeholderLabel.textColor")
         return self
     }
     
