@@ -152,8 +152,16 @@ extension String {
         return phone
     }
     ///拨打电话
-    public func PhoneCall(vc:UIViewController?){
-        AlertPhoneCall(str: self, vc: vc)
+    public func PhoneCall(){
+        let filtered = self.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+        if let url = URL(string: "tel://\(filtered)") {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+            
+        }
     }
     
     public var utfData: Data? {

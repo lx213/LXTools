@@ -20,7 +20,7 @@ open class BaseTitleViewController2: UIViewController,BaseTitleViewDelegate {
     }
     
     override open func viewWillAppear(_ animated: Bool) {
-        TopBarHidden(bool: true, v: self)
+        self.TopBarHidden(bool: true)
         view.bringSubview(toFront: btv)
     }
     

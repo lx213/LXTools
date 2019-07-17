@@ -17,7 +17,7 @@ open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
     }
 
     override open func viewWillAppear(_ animated: Bool) {
-        TopBarHidden(bool: true, v: self)
+        self.TopBarHidden(bool: true, isstory: true)
     }
     public func addTitleShadow(){
         addShadow(view: btv, y: btv.zj_height)

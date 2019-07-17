@@ -160,7 +160,7 @@ extension UITextField {
     /// 验证最终内容
     public func checkMsgFail(condition: Bool, errormsg: String ) -> Bool {
         if !condition {
-            AlertShow(msg: errormsg)
+            KrtAlertHelp.AlertShow(msg: errormsg)
             self.becomeFirstResponder()
         }
         return !condition

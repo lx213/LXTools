@@ -33,7 +33,7 @@ open class SKPhotoBrowserHelp {
         }
         
         let browser = SKPhotoBrowser(photos: imgs, initialPageIndex: index)
-        let vc = topViewController()
+        let vc = KrtVCHelp.topViewController()
         vc?.present(browser, animated: true, completion: nil)
     }
 }

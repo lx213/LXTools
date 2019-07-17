@@ -37,21 +37,6 @@ public func addShadow(view: UIView, y:CGFloat = 0) {
     view.layer.addSublayer(grdLayer)
 }
 
-///拨打电话
-public func PhoneCall(str:String){
-    //let filtered = str.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSString.CompareOptions.LiteralSearch, range: nil)
-    let filtered = str.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-    if let url = URL(string: "tel://\(filtered)") {
-        if #available(iOS 10, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
-        
-    }
-    
-}
-
 ///通过key值来获取对象
 public func getValueByKey(obj: Any, key: String) -> Any {
     let m = Mirror(reflecting: obj)
