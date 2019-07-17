@@ -8,7 +8,7 @@ pod 'RxSwift','~>4.0'
 pod 'RxCocoa','~>4.0'
 pod 'SnapKit'
 pod 'YYWebImage'
-pod 'IQKeyboardManagerSwift'
+pod 'IQKeyboardManagerSwift','6.2.0'
 pod 'MJRefresh'
 pod 'SKPhotoBrowser','6.0.0'
 end
