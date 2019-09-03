@@ -13,7 +13,15 @@ public let sh = UIScreen.main.bounds.size.height
 public let mpx = UIScreen.main.bounds.size.width / 750
 ///tabbar高度
 public var tbh:CGFloat = 49
-public var nh:CGFloat = 65
+public var nh:CGFloat = 44
+public var bottomSAHeight:CGFloat = 0.0
+public func getBottomHeight() {
+    if #available(iOS 11.0, *) {
+        bottomSAHeight = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
+    } else {
+        // Fallback on earlier versions
+    }
+}
 ///导航栏加状态栏高度
 public func getTH(vc: UIViewController) -> CGFloat{
     if vc.navigationController == nil {

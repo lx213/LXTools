@@ -1,4 +1,4 @@
-platform :ios, '8.1'
+platform :ios, '8.2'
 use_frameworks!
 target "LXTools" do
 pod 'HandyJSON','~> 4.2.0'
@@ -11,4 +11,6 @@ pod 'YYWebImage'
 pod 'IQKeyboardManagerSwift','6.2.0'
 pod 'MJRefresh'
 pod 'SKPhotoBrowser','6.0.0'
+pod 'Parchment','1.6.0'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift4'
 end

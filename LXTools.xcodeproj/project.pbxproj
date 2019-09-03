@@ -32,6 +32,7 @@
 		3C065B5922238DB600F1C9C7 /* BaseCodeTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B5522238DB600F1C9C7 /* BaseCodeTitleViewController.swift */; };
 		3C065B5A22238DB600F1C9C7 /* BaseTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065B5622238DB600F1C9C7 /* BaseTitleViewController.swift */; };
 		3C065B5F22239E4000F1C9C7 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C065B5E22239E3F00F1C9C7 /* back@2x.png */; };
+		3C15F1D4231E6A5900EB8801 /* LXDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C15F1D3231E6A5900EB8801 /* LXDialogView.swift */; };
 		3C69E23F222F9EA4009443D6 /* ButtonTitleDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E23E222F9EA4009443D6 /* ButtonTitleDown.swift */; };
 		3C69E242222F9F02009443D6 /* CountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E241222F9F02009443D6 /* CountDownButton.swift */; };
 		3C69E245222F9F6E009443D6 /* CardBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E244222F9F6E009443D6 /* CardBannerView.swift */; };
@@ -105,6 +106,7 @@
 		3C065B5522238DB600F1C9C7 /* BaseCodeTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCodeTitleViewController.swift; sourceTree = "<group>"; };
 		3C065B5622238DB600F1C9C7 /* BaseTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTitleViewController.swift; sourceTree = "<group>"; };
 		3C065B5E22239E3F00F1C9C7 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		3C15F1D3231E6A5900EB8801 /* LXDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXDialogView.swift; sourceTree = "<group>"; };
 		3C69E23E222F9EA4009443D6 /* ButtonTitleDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTitleDown.swift; sourceTree = "<group>"; };
 		3C69E241222F9F02009443D6 /* CountDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownButton.swift; sourceTree = "<group>"; };
 		3C69E244222F9F6E009443D6 /* CardBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBannerView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		3C065B40221FEB8300F1C9C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C15F1D2231E6A5900EB8801 /* 弹窗View */,
 				3CCBC340226DE3310010ECA8 /* 顶部对齐Label */,
 				3C69E246222FA192009443D6 /* 九宫格分类按钮 */,
 				3C69E243222F9F6E009443D6 /* 卡片滑动控件 */,
@@ -348,6 +351,14 @@
 				3C065B5E22239E3F00F1C9C7 /* back@2x.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		3C15F1D2231E6A5900EB8801 /* 弹窗View */ = {
+			isa = PBXGroup;
+			children = (
+				3C15F1D3231E6A5900EB8801 /* LXDialogView.swift */,
+			);
+			path = "弹窗View";
 			sourceTree = "<group>";
 		};
 		3C69E23D222F9EA4009443D6 /* 图文按钮 */ = {
@@ -545,12 +556,14 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
@@ -564,12 +577,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
@@ -636,6 +651,7 @@
 				3C065AEB221E8E1700F1C9C7 /* KRTLog.swift in Sources */,
 				3CBE435A225201F30089B789 /* Ex_UILabel.swift in Sources */,
 				3CBE4366225203DF0089B789 /* Ex_UIColor.swift in Sources */,
+				3C15F1D4231E6A5900EB8801 /* LXDialogView.swift in Sources */,
 				3C065B5122238CF700F1C9C7 /* MBProgressHUD.m in Sources */,
 				3C065AE5221E8D8C00F1C9C7 /* Ex_Date.swift in Sources */,
 				3C065B5822238DB600F1C9C7 /* BaseTitleViewController2.swift in Sources */,

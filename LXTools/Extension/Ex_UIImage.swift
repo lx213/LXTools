@@ -71,11 +71,11 @@ extension UIImage {
         return image
     }
     /// 彩色图片置灰，灰度图片
-    public class func grayImage(sourceImage : UIImage) -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(sourceImage.size, false, 0.0)
+    public func grayImage() -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
         let colorSpace = CGColorSpaceCreateDeviceGray()
-        let context = CGContext(data: nil , width: Int(sourceImage.size.width), height: Int(sourceImage.size.height),bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: CGImageAlphaInfo.none.rawValue)
-        context?.draw(sourceImage.cgImage!, in: CGRect.init(x: 0, y: 0, width: sourceImage.size.width, height: sourceImage.size.height))
+        let context = CGContext(data: nil , width: Int(self.size.width), height: Int(self.size.height),bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: CGImageAlphaInfo.none.rawValue)
+        context?.draw(self.cgImage!, in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
         let cgImage = context!.makeImage()
         let grayImage = UIImage.init(cgImage: cgImage!)
         return grayImage
