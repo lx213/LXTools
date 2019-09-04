@@ -27,11 +27,7 @@ open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
     
     open func back() {
         view.endEditing(true)
-        if let navigationController = navigationController, navigationController.viewControllers.first != self {
-            navigationController.popViewController(animated: true)
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+        VCBack()
     }
     
     open func rightBtnAction() {

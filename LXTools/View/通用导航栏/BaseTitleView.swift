@@ -80,6 +80,7 @@ import SnapKit
             make.width.equalTo(leftBtnW)
             make.height.equalTo(backView)
         }
+        leftBtn.imageView?.contentMode = .scaleAspectFit
         leftBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         rightBtn.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-16)
@@ -110,7 +111,7 @@ import SnapKit
         rightBtn.setTitle(rightTit, for: .normal)
         rightBtn.setTitleColor(hintColor, for: .normal)
         rightBtn.setImage(rightImg, for: .normal)
-        rightBtn.sizeToFit()
+//        rightBtn.sizeToFit()
         rightBtn.isHidden = rightBtnHidden
     }
 }

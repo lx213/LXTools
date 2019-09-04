@@ -34,9 +34,9 @@ open class LineCollectionView: UIView {
     var mpc = UIPageControl()
     var ll: LineLayout!
     var onePageSize = 8
-    weak var delegate: LineCollectionDelegate?
+    public weak var delegate: LineCollectionDelegate?
     
-    public init(row: Int, col: Int, size: CGSize) {
+    public init(row: Int, col: Int, size: CGSize, cellClass: AnyClass? = MCollectionViewCell.self) {
         super.init(frame: CGRect.zero)
         onePageSize = row * col
         ll = LineLayout(row: row, col: col ,iheight: size.height/2)
@@ -47,7 +47,7 @@ open class LineCollectionView: UIView {
         cn?.dataSource = self
         cn?.isPagingEnabled = true
         cn?.showsHorizontalScrollIndicator = false
-        cn?.register(MCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        cn?.register(cellClass, forCellWithReuseIdentifier: "cell")
         self.addSubview(cn!)
         mpc.currentPageIndicatorTintColor = UIColor(hex: 0x1290ff)
         mpc.pageIndicatorTintColor = UIColor(valueRGB: 0xdbdbdb)

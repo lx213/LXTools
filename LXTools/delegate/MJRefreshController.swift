@@ -14,7 +14,7 @@ import MJRefresh
     var needUpRefresh: Bool { get set }
     var mjScrollView: UIScrollView { get set }
     
-    @objc func downRefresh()
+    @objc func downRefresh(needHud: Bool)
     @objc func upRefresh()
 }
 

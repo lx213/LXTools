@@ -10,9 +10,13 @@ import Foundation
 
 open class KrtAlertHelp {
     ///确定取消的闭包回调
-    public static func GetAlet(_ title:String,message:String? = nil,vc:UIViewController?, OK: @escaping () -> ()) {
+    public static func GetAlet(_ title:String? = nil,message:String? = nil,vc:UIViewController?,Cancel: (() -> ())? = nil, OK: @escaping () -> ()) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (UIAlertAction) -> Void in
+            if Cancel != nil {
+                Cancel!()
+            }
+        }
         let fjky = UIAlertAction(title: "确定" , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
             OK()
         }
@@ -22,7 +26,7 @@ open class KrtAlertHelp {
         vc?.present(alertController, animated: true, completion: nil)
     }
     ///确定的闭包回调
-    public static func GetAletOnlyOK(_ title:String,message:String? = nil,vc:UIViewController?, OK: @escaping () -> ()) {
+    public static func GetAletOnlyOK(_ title:String? = nil,message:String? = nil,vc:UIViewController?, OK: @escaping () -> ()) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let fjky = UIAlertAction(title: "确定" , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
@@ -34,7 +38,7 @@ open class KrtAlertHelp {
         vc?.present(alertController, animated: true, completion: nil)
     }
     ///多情况选择项目回调
-    public static func GetAlertList(_ title:String,message:String? = nil,vc:UIViewController?,arr:[String], OK: @escaping (_ index:Int) -> ())  {
+    public static func GetAlertList(_ title:String? = nil,message:String? = nil,vc:UIViewController?,arr:[String], OK: @escaping (_ index:Int) -> ())  {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
@@ -49,7 +53,7 @@ open class KrtAlertHelp {
         vc?.present(alertController, animated: true, completion: nil)
     }
     ///带输入框的弹窗
-    public static func GetTextAlet(_ title:String,message:String? = nil,vc:UIViewController?,placeholder: String, OK: @escaping (_ text: String) -> ()) {
+    public static func GetTextAlet(_ title:String? = nil,message:String? = nil,vc:UIViewController?,placeholder: String, OK: @escaping (_ text: String) -> ()) {
         var tf = UITextField()
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

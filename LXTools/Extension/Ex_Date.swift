@@ -107,4 +107,14 @@ extension Date {
         let components = Calendar.current.dateComponents([.minute], from: self, to: eDate!)
         return components.minute ?? 0
     }
+    
+    ///计算日期相差分钟
+    public func secBetweenDate(toDate: Date) -> Int {
+        //给结束时间加1秒
+        //        var com1 = DateComponents()
+        //        com1.second = 1
+        //        let eDate = Calendar.current.date(byAdding: com1, to: toDate)
+        let components = Calendar.current.dateComponents([.second], from: self, to: toDate)
+        return components.second ?? 0
+    }
 }

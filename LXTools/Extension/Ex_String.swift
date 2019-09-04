@@ -110,6 +110,11 @@ extension String {
     }
     public func isTelNumber()->Bool
     {
+        if self.length_ex == 11 && self.substring(toIndex: 1) == "1" {
+            return true
+        }else{
+            return false
+        }
         let num = self
         let mobile = "^1((3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$)"
         let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)"

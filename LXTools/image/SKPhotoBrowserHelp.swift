@@ -60,7 +60,7 @@ open class CustomYYCache: SKImageCacheable {
     
     var cache: YYImageCache
     
-    init() {
+    public init() {
         cache = YYWebImageManager.shared().cache!
     }
 }

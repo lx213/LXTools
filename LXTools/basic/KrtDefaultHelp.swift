@@ -19,9 +19,13 @@ open class KrtDefaultHelp{
     }
     
     ///读取存储内容
-    public static func GetDefault(_ DefaultString:String)->Any{
-        return  UserDefaults.standard.object(forKey: DefaultString)!
+    public static func GetDefault(_ DefaultString:String)->Any?{
+        return  UserDefaults.standard.object(forKey: DefaultString)
        
+    }
+    
+    public static func GetDefaultString(_ DefaultString:String) -> String? {
+        return  UserDefaults.standard.string(forKey: DefaultString)
     }
     
     ///设置存储内容

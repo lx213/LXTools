@@ -13,6 +13,12 @@ open class YYWebImageUtil {
         imgv?.yy_setImage(with: URL(string: url), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], completion: nil)
     }
     
+    public static func loadGrayImg(imgv: UIImageView?, url: String, placeholder: UIImage?) {
+        imgv?.yy_setImage(with: URL(string: url), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], progress: nil, transform: { (image, url) -> UIImage? in
+            return image.grayImage()
+        }, completion: nil)
+    }
+    
     public static func loadImg(imgv: UIImageView?, url: String, placeholder: UIImage?, block: YYWebImageCompletionBlock?) {
         imgv?.yy_setImage(with: URL(string: url), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], completion: block)
     }

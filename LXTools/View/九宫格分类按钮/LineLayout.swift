@@ -31,13 +31,13 @@ open class LineLayout: UICollectionViewFlowLayout{
         return self.collectionView?.bounds.height
     }()!
     
-    public init(row: Int, col: Int, iheight: CGFloat) {
+    public init(row: Int, col: Int, iheight: CGFloat, fwidth: CGFloat = sw) {
         super.init()
         
         self.row = row
         self.col = col
         
-        itemW = sw / CGFloat(col)
+        itemW = fwidth / CGFloat(col)
         itemH = iheight
         
         //设置每一个元素的大小

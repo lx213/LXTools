@@ -33,14 +33,20 @@ open class PTextView: UIView,UITextViewDelegate {
         return self
     }
     
-    public func setFont(font: UIFont) -> Self {
-        ptv.font = font
-        tv.font = font
+    public func setFont(font: CGFloat) -> Self {
+        ptv.font = UIFont.systemFont(ofSize: font)
+        tv.font = UIFont.systemFont(ofSize: font)
         return self
     }
     
     public func getText() -> String {
         return tv.text
+    }
+    
+    public func setText(str: String) -> Self {
+        tv.text = str
+        ptv.isHidden = true
+        return self
     }
     
     public func textViewDidChange(_ textView: UITextView) {

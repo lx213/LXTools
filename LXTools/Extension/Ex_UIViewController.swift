@@ -35,6 +35,14 @@ extension UIViewController {
         self.navigationController?.popToViewController((self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-num-1])!, animated: true)
     }
     
+    public func VCBack() {
+        if let navigationController = navigationController, navigationController.viewControllers.first != self {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     ///设置nav标题
     public func SetVcTitle(title:String){
         if title == "" {
