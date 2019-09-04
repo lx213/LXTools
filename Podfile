@@ -12,5 +12,5 @@ pod 'IQKeyboardManagerSwift','6.2.0'
 pod 'MJRefresh'
 pod 'SKPhotoBrowser','6.0.0'
 pod 'Parchment','1.6.0'
-pod 'Spring', '1.0.5'
+pod 'Spring', '1.0.6'
 end
