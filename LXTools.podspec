@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.1.7'
+    s.version      = '0.1.8'
     s.swift_version = '4.0'
     s.summary      = 'Tools on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'
@@ -23,5 +23,5 @@ s.dependency 'IQKeyboardManagerSwift','6.2.0'
 s.dependency 'MJRefresh'
 s.dependency 'SKPhotoBrowser','6.0.0'
 s.dependency 'Parchment','1.6.0'
-s.dependency 'Spring', '1.0.3'
+s.dependency 'Spring', '1.0.5'
 end
