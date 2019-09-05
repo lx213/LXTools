@@ -14,7 +14,7 @@ open class KrtNotifiHelp {
         NotificationCenter.default.addObserver(obj, selector: selector, name: NSNotification.Name(rawValue: ntfname), object: nil)
     }
     ///发送消息
-    public static func PostNotify(Ntfstr:String,obj:AnyObject){
+    public static func PostNotify(Ntfstr:String,obj:AnyObject?){
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Ntfstr), object: obj)
     }
     ///移除消息

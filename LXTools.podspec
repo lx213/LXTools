@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.1.14'
+    s.version      = '0.1.15'
     s.swift_version = '4.0' # 项目中使用的Swift版本，多个用“,”隔开
     s.summary      = 'Tools on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'

@@ -70,7 +70,7 @@ extension UIViewController {
             
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
-            self.navigationController?.navigationBar.isTranslucent = true
+            self.navigationController?.navigationBar.isTranslucent = isTranslucent
         }else {
             if let  nv = self.navigationController?.navigationBar {
                 let view = UIView(frame: CGRect(x: 0, y: isstory ? 0 : -getTH(vc:self), width: self.view.zj_width , height: isTranslucent ? getTH(vc:self) : 0))
@@ -81,7 +81,7 @@ extension UIViewController {
             if !isstory {
                 self.edgesForExtendedLayout = []
             }
-            self.navigationController?.navigationBar.isTranslucent = true
+            self.navigationController?.navigationBar.isTranslucent = isTranslucent
             
         }
     }
