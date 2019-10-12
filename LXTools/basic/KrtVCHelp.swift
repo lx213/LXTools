@@ -48,4 +48,15 @@ open class KrtVCHelp {
         let VC : UIViewController = SB.instantiateViewController(withIdentifier: Identifier)
         return VC
     }
+    
+    ///获取顶部window
+    public func getLastWindow() -> UIWindow {
+        let windows = UIApplication.shared.windows
+        for window in windows {
+            if (window.isKind(of: UIWindow.self) && window.frame.equalTo(UIScreen.main.bounds)) {
+                return window
+            }
+        }
+        return UIApplication.shared.keyWindow!
+    }
 }

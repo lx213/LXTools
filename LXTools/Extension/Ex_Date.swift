@@ -108,7 +108,7 @@ extension Date {
         return components.minute ?? 0
     }
     
-    ///计算日期相差分钟
+    ///计算日期相差秒
     public func secBetweenDate(toDate: Date) -> Int {
         //给结束时间加1秒
         //        var com1 = DateComponents()

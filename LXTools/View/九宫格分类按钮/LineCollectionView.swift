@@ -71,7 +71,7 @@ extension LineCollectionView:UICollectionViewDataSource,UICollectionViewDelegate
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         if let dg = delegate {
             weak var wself = self
             let ncell = dg.LCCellForItem(target: wself!, cell: cell, index: indexPath.row)
@@ -81,7 +81,7 @@ extension LineCollectionView:UICollectionViewDataSource,UICollectionViewDelegate
         }
     }
     
-    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         weak var wself = self
         delegate?.LCItemClick(target: wself!, index: indexPath.row)
     }

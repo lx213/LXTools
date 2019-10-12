@@ -22,8 +22,20 @@ extension UIButton {
     }
     
     ///设置图片
+    public func msetImg(img: String, state: UIControlState) -> Self {
+        self.setImage(UIImage(named: img), for: state)
+        return self
+    }
+    
+    ///设置图片
     public func msetBackgroundImage(img: UIImage?, state: UIControlState) -> Self {
         self.setBackgroundImage(img, for: state)
+        return self
+    }
+    
+    ///设置图片
+    public func msetBackgroundImage(img: String, state: UIControlState) -> Self {
+        self.setBackgroundImage(UIImage(named: img), for: state)
         return self
     }
     
@@ -75,6 +87,18 @@ extension UIButton {
         self.contentHorizontalAlignment = ali
         self.imageEdgeInsets = imginsets
         self.contentEdgeInsets = contentinsets
+        return self
+    }
+    
+    ///设置图片边距
+    public func msetImgInset(inset: UIEdgeInsets) -> Self{
+        self.imageEdgeInsets = inset
+        return self
+    }
+    
+    ///设置文本边距
+    public func msetTextInset(inset: UIEdgeInsets) -> Self{
+        self.titleEdgeInsets = inset
         return self
     }
 }

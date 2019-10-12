@@ -21,6 +21,12 @@ extension UITableView {
         return self
     }
     
+    ///设置内边距
+    public func msetInset(inset:UIEdgeInsets) -> Self {
+        self.contentInset = inset
+        return self
+    }
+    
     ///设置tableFooterView
     public func msetTableFooterView(view: UIView?) -> Self {
         self.tableFooterView = view
@@ -54,6 +60,14 @@ extension UITableView {
     ///设置分割线样式
     public func msetSeparatorStyle(separatorStyle: UITableViewCellSeparatorStyle) -> Self {
         self.separatorStyle = separatorStyle
+        return self
+    }
+    
+    ///是否显示垂直滑动指示器
+    public func msetShowVerticalScrollIndicator(show: Bool) -> Self {
+        let tb = UITableView()
+        
+        self.showsVerticalScrollIndicator = show
         return self
     }
 }

@@ -38,6 +38,7 @@
 		3C69E24C222FA192009443D6 /* MCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E248222FA192009443D6 /* MCollectionViewCell.swift */; };
 		3C69E24D222FA192009443D6 /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E249222FA192009443D6 /* LineLayout.swift */; };
 		3C69E24E222FA192009443D6 /* LineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69E24A222FA192009443D6 /* LineCollectionView.swift */; };
+		3CBE0DD8232F7109000A6AA0 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE0DD6232F7109000A6AA0 /* iCarousel.m */; };
 		3CBE435A225201F30089B789 /* Ex_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE4359225201F30089B789 /* Ex_UILabel.swift */; };
 		3CBE435C225202170089B789 /* Ex_UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE435B225202170089B789 /* Ex_UIButton.swift */; };
 		3CBE435E225202420089B789 /* Ex_UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE435D225202420089B789 /* Ex_UIImageView.swift */; };
@@ -52,6 +53,7 @@
 		3CC5F4EE22DEC7C9004972E9 /* KrtVCHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5F4ED22DEC7C9004972E9 /* KrtVCHelp.swift */; };
 		3CCBC33F226DE2AA0010ECA8 /* Ex_UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCBC33E226DE2AA0010ECA8 /* Ex_UITableView.swift */; };
 		3CCBC342226DE3310010ECA8 /* PatientInfoCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCBC341226DE3310010ECA8 /* PatientInfoCustomLabel.swift */; };
+		3CE2E85D2351AD2B00165E5F /* Ex_UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE2E85C2351AD2B00165E5F /* Ex_UICollectionView.swift */; };
 		8296FC01E6BFB3F66CD5CC14 /* Pods_LXTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,8 @@
 		3C69E248222FA192009443D6 /* MCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C69E249222FA192009443D6 /* LineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
 		3C69E24A222FA192009443D6 /* LineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionView.swift; sourceTree = "<group>"; };
+		3CBE0DD6232F7109000A6AA0 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		3CBE0DD7232F7109000A6AA0 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		3CBE4359225201F30089B789 /* Ex_UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UILabel.swift; sourceTree = "<group>"; };
 		3CBE435B225202170089B789 /* Ex_UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UIButton.swift; sourceTree = "<group>"; };
 		3CBE435D225202420089B789 /* Ex_UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UIImageView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		3CC5F4ED22DEC7C9004972E9 /* KrtVCHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrtVCHelp.swift; sourceTree = "<group>"; };
 		3CCBC33E226DE2AA0010ECA8 /* Ex_UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UITableView.swift; sourceTree = "<group>"; };
 		3CCBC341226DE3310010ECA8 /* PatientInfoCustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInfoCustomLabel.swift; sourceTree = "<group>"; };
+		3CE2E85C2351AD2B00165E5F /* Ex_UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UICollectionView.swift; sourceTree = "<group>"; };
 		4DE3B0F754BCF6C134DBAF0C /* Pods-LXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.debug.xcconfig"; sourceTree = "<group>"; };
 		66B7ADD056255AD1ADCC8F29 /* Pods_LXTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CD371FB274082989A616E5 /* Pods-LXTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXTools/Pods-LXTools.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 				3CBE4365225203DF0089B789 /* Ex_UIColor.swift */,
 				3CBE4363225203540089B789 /* Ex_Int.swift */,
 				3CCBC33E226DE2AA0010ECA8 /* Ex_UITableView.swift */,
+				3CE2E85C2351AD2B00165E5F /* Ex_UICollectionView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 		3C065B40221FEB8300F1C9C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CBE0DD5232F7109000A6AA0 /* iCarousel */,
 				3CCBC340226DE3310010ECA8 /* 顶部对齐Label */,
 				3C69E246222FA192009443D6 /* 九宫格分类按钮 */,
 				3C69E243222F9F6E009443D6 /* 卡片滑动控件 */,
@@ -382,6 +389,15 @@
 				3C69E24A222FA192009443D6 /* LineCollectionView.swift */,
 			);
 			path = "九宫格分类按钮";
+			sourceTree = "<group>";
+		};
+		3CBE0DD5232F7109000A6AA0 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				3CBE0DD6232F7109000A6AA0 /* iCarousel.m */,
+				3CBE0DD7232F7109000A6AA0 /* iCarousel.h */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		3CCBC340226DE3310010ECA8 /* 顶部对齐Label */ = {
@@ -622,6 +638,7 @@
 				3CBE435C225202170089B789 /* Ex_UIButton.swift in Sources */,
 				3C065AB1221E815F00F1C9C7 /* ViewController.swift in Sources */,
 				3C065AE8221E8D8C00F1C9C7 /* Ex_UIViewController.swift in Sources */,
+				3CE2E85D2351AD2B00165E5F /* Ex_UICollectionView.swift in Sources */,
 				3C065AAF221E815F00F1C9C7 /* AppDelegate.swift in Sources */,
 				3C065AFE221E9FF100F1C9C7 /* SetErrorView.swift in Sources */,
 				3C69E24C222FA192009443D6 /* MCollectionViewCell.swift in Sources */,
@@ -643,6 +660,7 @@
 				3C065B5822238DB600F1C9C7 /* BaseTitleViewController2.swift in Sources */,
 				3C065AFD221E9FF100F1C9C7 /* SetNoDataView.swift in Sources */,
 				3C065B5A22238DB600F1C9C7 /* BaseTitleViewController.swift in Sources */,
+				3CBE0DD8232F7109000A6AA0 /* iCarousel.m in Sources */,
 				3CBE4362225202A70089B789 /* Ex_UIView.swift in Sources */,
 				3C065B43221FEB9B00F1C9C7 /* PTextView.swift in Sources */,
 				3CC5F4E822DEC26C004972E9 /* KrtAlertHelp.swift in Sources */,

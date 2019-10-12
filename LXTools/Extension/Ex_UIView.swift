@@ -109,6 +109,12 @@ extension UIView {
         return self
     }
     
+    ///设置tag
+    public func msetTag(tag: Int) -> Self {
+        self.tag = tag
+        return self
+    }
+    
     ///旋转
     public func rotate360DegreeWithImageView(duration:CFTimeInterval , repeatCount :Float ) {
         

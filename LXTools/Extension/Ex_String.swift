@@ -345,6 +345,9 @@ extension String {
     
     // MARK: - 获取联系人姓名首字母(传入汉字字符串, 返回大写拼音首字母)
     public func getFirstLetterFromString() -> (String) {
+        if self == "" {
+            return "#"
+        }
         // 注意,这里一定要转换成可变字符串
         let mutableString = NSMutableString.init(string: self)
         // 将中文转换成带声调的拼音
@@ -372,5 +375,15 @@ extension String {
         if nameString.hasPrefix("曾") {return "zeng"}
         return pinyinString
         
+    }
+    
+    ///隐藏身份证信息
+    public func idCardHidden() -> String {
+        return "\(self[0..<6])********\(self.substring(fromIndex: self.length-4))"
+    }
+    
+    ///转utf-8编码
+    public func toUtf8() -> String{
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
     }
 }

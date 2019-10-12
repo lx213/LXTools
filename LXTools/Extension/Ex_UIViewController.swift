@@ -35,6 +35,15 @@ extension UIViewController {
         self.navigationController?.popToViewController((self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-num-1])!, animated: true)
     }
     
+    ///多级后退
+    public func backPresent(num: Int) {
+        var vc:UIViewController? = self
+        for i in 0..<num {
+            vc = vc?.presentingViewController
+        }
+        vc?.presentBack()
+    }
+    
     public func VCBack() {
         if let navigationController = navigationController, navigationController.viewControllers.first != self {
             navigationController.popViewController(animated: true)
