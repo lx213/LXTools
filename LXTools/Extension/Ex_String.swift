@@ -379,7 +379,7 @@ extension String {
     
     ///隐藏身份证信息
     public func idCardHidden() -> String {
-        return "\(self[0..<6])********\(self.substring(fromIndex: self.length-4))"
+        return "\(self[0..<6])********\(self.substring(fromIndex: self.length_ex-4))"
     }
     
     ///转utf-8编码
