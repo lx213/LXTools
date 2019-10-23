@@ -79,7 +79,7 @@ open class CardBannerView: UIView,UICollectionViewDataSource,UICollectionViewDel
         collect.delegate = self
         collect.showsHorizontalScrollIndicator = false
         collect.showsVerticalScrollIndicator = false
-        collect.decelerationRate = 0.1
+        collect.decelerationRate = UIScrollView.DecelerationRate(rawValue: 0.1)
 //        collect.isPagingEnabled = iscycles
         self.addSubview(collect)
         
@@ -278,9 +278,9 @@ open class CardLayout: UICollectionViewFlowLayout {
     override open func prepare() {
         //设置边距，让第一张和最后一张图片出现在最中央
         if isCycles {
-            self.sectionInset = UIEdgeInsetsMake(0, inset, 0, inset)
+            self.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         }else{
-            self.sectionInset = UIEdgeInsetsMake(0, lineSpacing, 0, lineSpacing)
+            self.sectionInset = UIEdgeInsets(top: 0, left: lineSpacing, bottom: 0, right: lineSpacing)
         }
     }
     

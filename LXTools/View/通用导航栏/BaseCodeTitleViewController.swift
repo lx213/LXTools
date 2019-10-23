@@ -25,7 +25,7 @@ open class BaseCodeTitleViewController: UIViewController,BaseTitleViewDelegate {
     }
 
     override open func viewWillAppear(_ animated: Bool) {
-        view.bringSubview(toFront: btv)
+        view.bringSubviewToFront(btv)
     }
     
     public func addTitleShadow(){

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = 'LXTools'
-    s.version      = '0.1.16'
-    s.swift_version = '4.0' # 项目中使用的Swift版本，多个用“,”隔开
+    s.version      = '0.1.17'
+    s.swift_version = '4.0','4.2' # 项目中使用的Swift版本，多个用“,”隔开
     s.summary      = 'Tools on iOS'
     s.homepage     = 'https://github.com/lx213/LXTools'
     s.license      = 'MIT'
@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
     s.resource_bundles = {
 	'LXAssets' => ['Assets/*']
 	}
-   s.dependency 'HandyJSON','~> 4.2.0'
-s.dependency 'Alamofire','4.5.1'
-s.dependency 'Moya/RxSwift','~>11.0'
+   s.dependency 'HandyJSON','5.0.0'
+s.dependency 'Alamofire','4.9.0'
+s.dependency 'Moya/RxSwift','~>13.0.0'
 s.dependency 'RxSwift','~>4.0'
 s.dependency 'RxCocoa','~>4.0'
 s.dependency 'SnapKit'

@@ -12,12 +12,12 @@ open class KrtAlertHelp {
     ///确定取消的闭包回调
     public static func GetAlet(_ title:String? = nil,message:String? = nil,vc:UIViewController?,Cancel: (() -> ())? = nil, OK: @escaping () -> ()) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (UIAlertAction) -> Void in
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel){ (UIAlertAction) -> Void in
             if Cancel != nil {
                 Cancel!()
             }
         }
-        let fjky = UIAlertAction(title: "确定" , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
+        let fjky = UIAlertAction(title: "确定" , style: UIAlertAction.Style.default){ (UIAlertAction) -> Void in
             OK()
         }
         alertController.addAction(fjky)
@@ -29,7 +29,7 @@ open class KrtAlertHelp {
     public static func GetAletOnlyOK(_ title:String? = nil,message:String? = nil,vc:UIViewController?, OK: @escaping () -> ()) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let fjky = UIAlertAction(title: "确定" , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
+        let fjky = UIAlertAction(title: "确定" , style: UIAlertAction.Style.default){ (UIAlertAction) -> Void in
             OK()
         }
         alertController.addAction(fjky)
@@ -41,9 +41,9 @@ open class KrtAlertHelp {
     public static func GetAlertList(_ title:String? = nil,message:String? = nil,vc:UIViewController?,arr:[String], OK: @escaping (_ index:Int) -> ())  {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: nil)
         for i in 0..<arr.count {
-            let ListType = UIAlertAction(title: arr[i] , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
+            let ListType = UIAlertAction(title: arr[i] , style: UIAlertAction.Style.default){ (UIAlertAction) -> Void in
                 OK(i)
             }
             alertController.addAction(ListType)
@@ -57,8 +57,8 @@ open class KrtAlertHelp {
         var tf = UITextField()
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
-        let fjky = UIAlertAction(title: "确定" , style: UIAlertActionStyle.default){ (UIAlertAction) -> Void in
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: nil)
+        let fjky = UIAlertAction(title: "确定" , style: UIAlertAction.Style.default){ (UIAlertAction) -> Void in
             if tf.getTrim() != "" {
                 OK(tf.getTrim())
             }

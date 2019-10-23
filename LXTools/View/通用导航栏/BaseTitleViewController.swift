@@ -22,7 +22,7 @@ open class BaseTitleViewController: UIViewController,BaseTitleViewDelegate {
     ///添加阴影
     public func addTitleShadow(){
         addShadow(view: btv, y: btv.zj_height)
-        view.bringSubview(toFront: btv)
+        view.bringSubviewToFront(btv)
     }
     
     open func back() {

@@ -38,7 +38,7 @@ extension UIViewController {
     ///多级后退
     public func backPresent(num: Int) {
         var vc:UIViewController? = self
-        for i in 0..<num {
+        for _ in 0..<num {
             vc = vc?.presentingViewController
         }
         vc?.presentBack()
@@ -60,7 +60,7 @@ extension UIViewController {
         let font = UIFont.systemFont(ofSize: 16)
         
         
-        let titlesize = title.size(withAttributes: [NSAttributedStringKey.font:(font)]) as CGSize
+        let titlesize = title.size(withAttributes: [NSAttributedString.Key.font:(font)]) as CGSize
         
         let lab = UILabel(frame: CGRect(origin: CGPoint(x: 0,y: 0), size: titlesize))
         lab.backgroundColor = UIColor.clear

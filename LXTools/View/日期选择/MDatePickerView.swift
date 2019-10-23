@@ -27,7 +27,7 @@ open class MDatePickerView: UIView {
         
     }
     
-    public convenience init(delegate:MDatePickerDelegate, mode: UIDatePickerMode){
+    public convenience init(delegate:MDatePickerDelegate, mode: UIDatePicker.Mode){
         let frame = CGRect(x: 0, y: sh, width: sw, height: 250)
         self.init(frame: frame)
         
@@ -75,7 +75,7 @@ open class MDatePickerView: UIView {
     //展示弹窗
     public func show() {
         mwindow = UIWindow.init(frame: UIScreen.main.bounds)
-        mwindow?.windowLevel = UIWindowLevelAlert + 1
+        mwindow?.windowLevel = UIWindow.Level.alert + 1
         mwindow?.backgroundColor = UIColor.clear
         mwindow?.isHidden = true
         mwindow?.isUserInteractionEnabled = true
@@ -93,7 +93,7 @@ open class MDatePickerView: UIView {
     public func show(date: Date) {
         picker.setDate(date, animated: false)
         mwindow = UIWindow.init(frame: UIScreen.main.bounds)
-        mwindow?.windowLevel = UIWindowLevelAlert + 1
+        mwindow?.windowLevel = UIWindow.Level.alert + 1
         mwindow?.backgroundColor = UIColor.clear
         mwindow?.isHidden = true
         mwindow?.isUserInteractionEnabled = true

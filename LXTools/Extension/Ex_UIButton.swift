@@ -10,31 +10,31 @@ import Foundation
 
 extension UIButton {
     ///设置文本内容
-    public func msetText(text: String, state: UIControlState) -> Self {
+    public func msetText(text: String, state: UIControl.State) -> Self {
         self.setTitle(text, for: state)
         return self
     }
     
     ///设置图片
-    public func msetImg(img: UIImage?, state: UIControlState) -> Self {
+    public func msetImg(img: UIImage?, state: UIControl.State) -> Self {
         self.setImage(img, for: state)
         return self
     }
     
     ///设置图片
-    public func msetImg(img: String, state: UIControlState) -> Self {
+    public func msetImg(img: String, state: UIControl.State) -> Self {
         self.setImage(UIImage(named: img), for: state)
         return self
     }
     
     ///设置图片
-    public func msetBackgroundImage(img: UIImage?, state: UIControlState) -> Self {
+    public func msetBackgroundImage(img: UIImage?, state: UIControl.State) -> Self {
         self.setBackgroundImage(img, for: state)
         return self
     }
     
     ///设置图片
-    public func msetBackgroundImage(img: String, state: UIControlState) -> Self {
+    public func msetBackgroundImage(img: String, state: UIControl.State) -> Self {
         self.setBackgroundImage(UIImage(named: img), for: state)
         return self
     }
@@ -52,19 +52,19 @@ extension UIButton {
     }
     
     ///设置字体颜色
-    public func msetTextColor(color: UIColor?, state: UIControlState) -> Self {
+    public func msetTextColor(color: UIColor?, state: UIControl.State) -> Self {
         self.setTitleColor(color, for: state)
         return self
     }
     
     ///设置字体颜色
-    public func msetTextColor(color: Int, state: UIControlState) -> Self {
+    public func msetTextColor(color: Int, state: UIControl.State) -> Self {
         self.setTitleColor(UIColor(hex: color), for: state)
         return self
     }
     
     ///设置字体颜色
-    public func msetTextColor(color: String, state: UIControlState) -> Self {
+    public func msetTextColor(color: String, state: UIControl.State) -> Self {
         self.setTitleColor(UIColor(hexString: color), for: state)
         return self
     }
@@ -76,14 +76,14 @@ extension UIButton {
     }
     
     ///设置点击事件
-    public func msetClick(target: Any?, action: Selector, event: UIControlEvents = UIControlEvents.touchUpInside) -> Self {
-        let a = UIButton()
+    public func msetClick(target: Any?, action: Selector, event: UIControl.Event = UIControl.Event.touchUpInside) -> Self {
+        _ = UIButton()
         self.addTarget(target, action: action, for: event)
         return self
     }
     
     ///设置水平对齐方式
-    public func msetHAlignment(ali: UIControlContentHorizontalAlignment, imginsets: UIEdgeInsets = UIEdgeInsets.zero, contentinsets: UIEdgeInsets = UIEdgeInsets.zero) -> Self {
+    public func msetHAlignment(ali: UIControl.ContentHorizontalAlignment, imginsets: UIEdgeInsets = UIEdgeInsets.zero, contentinsets: UIEdgeInsets = UIEdgeInsets.zero) -> Self {
         self.contentHorizontalAlignment = ali
         self.imageEdgeInsets = imginsets
         self.contentEdgeInsets = contentinsets

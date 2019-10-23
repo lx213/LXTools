@@ -40,7 +40,7 @@ extension UITableView {
     }
     
     ///设置autoresizingMask
-    public func msetAutoresizingMask(autoresizingMask: UIViewAutoresizing) -> Self {
+    public func msetAutoresizingMask(autoresizingMask: UIView.AutoresizingMask) -> Self {
         self.autoresizingMask = autoresizingMask
         return self
     }
@@ -58,14 +58,14 @@ extension UITableView {
     }
     
     ///设置分割线样式
-    public func msetSeparatorStyle(separatorStyle: UITableViewCellSeparatorStyle) -> Self {
+    public func msetSeparatorStyle(separatorStyle: UITableViewCell.SeparatorStyle) -> Self {
         self.separatorStyle = separatorStyle
         return self
     }
     
     ///是否显示垂直滑动指示器
     public func msetShowVerticalScrollIndicator(show: Bool) -> Self {
-        let tb = UITableView()
+        _ = UITableView()
         
         self.showsVerticalScrollIndicator = show
         return self

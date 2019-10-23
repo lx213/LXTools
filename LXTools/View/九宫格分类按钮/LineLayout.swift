@@ -52,7 +52,7 @@ open class LineLayout: UICollectionViewFlowLayout{
     //对一些布局的准备操作
     override open func prepare() {
         //设置边距
-        self.sectionInset = UIEdgeInsetsMake(inseth, insetw, inseth, insetw)
+        self.sectionInset = UIEdgeInsets(top: inseth, left: insetw, bottom: inseth, right: insetw)
     }
     
     required public init?(coder aDecoder: NSCoder) {

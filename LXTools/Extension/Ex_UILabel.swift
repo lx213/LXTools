@@ -52,7 +52,7 @@ extension UILabel {
     
     ///设置行数
     public func msetLineNumber(num: Int) -> Self {
-        let a = UILabel()
+        _ = UILabel()
         self.numberOfLines = num
         return self
     }
@@ -64,11 +64,11 @@ extension UILabel {
         }
         //        let textns = NSString(CString: self.text!.cStringUsingEncoding(NSUTF8StringEncoding)!, encoding: NSUTF8StringEncoding.rawValue)!
         let textns = NSString.init(cString: self.text!.cString(using: String.Encoding.utf8)!, encoding: String.Encoding.utf8.rawValue)!
-        let textbound1 =  textns.boundingRect(with: CGSize.zero, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : self.font], context: nil)
+        let textbound1 =  textns.boundingRect(with: CGSize.zero, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : self.font], context: nil)
         if textbound1.width <= maxwidth {
             return CGSize(width: textbound1.width+5, height: textbound1.height)
         }else{
-            let tb2 = textns.boundingRect(with: CGSize(width: maxwidth, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : self.font], context: nil)
+            let tb2 = textns.boundingRect(with: CGSize(width: maxwidth, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : self.font], context: nil)
             return CGSize(width: maxwidth, height: tb2.height+5)
         }
     }
