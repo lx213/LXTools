@@ -51,9 +51,9 @@ extension UIView {
     }
     
     ///设置圆角
-    public func msetCornerRadius(radius: CGFloat) -> Self {
+    public func msetCornerRadius(radius: CGFloat,needClip: Bool = true) -> Self {
         self.layer.cornerRadius = radius
-        self.clipsToBounds = true
+        self.clipsToBounds = needClip
         return self
     }
     

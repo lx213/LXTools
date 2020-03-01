@@ -62,20 +62,23 @@ extension UITextField {
     }
     
     ///修改placeHolder字体颜色
-    public func msetPlaceholderColor(color: UIColor) -> Self{
-        self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
+    public func msetPlaceholderColor(text: String,color: UIColor) -> Self{
+        let pstr = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : color])
+        self.attributedPlaceholder = pstr
         return self
     }
     
     ///修改placeHolder字体颜色
-    public func msetPlaceholderColor(color: Int) -> Self{
-        self.setValue(UIColor(hex: color), forKeyPath: "_placeholderLabel.textColor")
+    public func msetPlaceholderColor(text: String,color: Int) -> Self{
+        let pstr = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor(hex: color)])
+        self.attributedPlaceholder = pstr
         return self
     }
     
     ///修改placeHolder字体颜色
-    public func msetPlaceholderColor(color: String) -> Self{
-        self.setValue(UIColor(hexString: color), forKeyPath: "_placeholderLabel.textColor")
+    public func msetPlaceholderColor(text: String,color: String) -> Self{
+        let pstr = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor(hexString: color)])
+        self.attributedPlaceholder = pstr
         return self
     }
     

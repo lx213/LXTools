@@ -10,6 +10,20 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
+    //push到下一页,如果页面已存在则返回
+    public func pushToViewSingle(vc: UIViewController,vcClass: AnyClass, ani: Bool = true) {
+        if let cts = self.navigationController?.viewControllers {
+            for i in 0..<cts.count {
+                if cts[i].isKind(of: vcClass) {
+                    self.backPush(num: cts.count-1-i)
+                    return
+                }
+            }
+        }
+        self.navigationController?.pushViewController(vc, animated: ani)
+    }
+    
     ///push到下一页
     public func pushToView(vc: UIViewController, ani: Bool = true) {
         self.navigationController?.pushViewController(vc, animated: ani)

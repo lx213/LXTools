@@ -37,25 +37,25 @@ extension MJRefreshController {
     ///结束下拉刷新
     public func headerEndRefreshing() {
         if needDownRefresh {
-            mjScrollView.mj_header.endRefreshing()
+            mjScrollView.mj_header?.endRefreshing()
         }
     }
     ///结束加载更多
     public func footerEndRefreshing() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
-            mjScrollView.mj_footer.endRefreshing()
+            mjScrollView.mj_footer?.endRefreshing()
         }
     }
     ///结束加载更多并显示无更多数据
     public func footerEndRefreshingWithNoMoreData() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
-            mjScrollView.mj_footer.endRefreshingWithNoMoreData()
+            mjScrollView.mj_footer?.endRefreshingWithNoMoreData()
         }
     }
     ///重置无更多数据状态
     public func footerResetNoMoreData() {
         if needUpRefresh && mjScrollView.mj_footer != nil {
-            mjScrollView.mj_footer.resetNoMoreData()
+            mjScrollView.mj_footer?.resetNoMoreData()
         }
     }
     ///设置加载更多
