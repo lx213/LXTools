@@ -45,8 +45,8 @@ extension UIViewController {
     }
     
     ///后退层级调转
-    public func backPush(num: Int){
-        self.navigationController?.popToViewController((self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-num-1])!, animated: true)
+    public func backPush(num: Int,animated:Bool = true){
+        self.navigationController?.popToViewController((self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-num-1])!, animated: animated)
     }
     
     ///多级后退

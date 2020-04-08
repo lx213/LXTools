@@ -74,8 +74,9 @@ open class KrtBlackTools {
 
 extension UIImage {
     //黑白效果滤镜
-    func noir() -> UIImage?
+    public func noir() -> UIImage?
     {
+        let oldsize = self.size
         let imageData = self.pngData()
         let inputImage = CoreImage.CIImage(data: imageData!)
         let context = CIContext(options:nil)
@@ -83,19 +84,21 @@ extension UIImage {
         filter!.setValue(inputImage, forKey: kCIInputImageKey)
         if let outputImage = filter!.outputImage {
             let outImage = context.createCGImage(outputImage, from: outputImage.extent)
-            return UIImage(cgImage: outImage!)
+            var newImg = UIImage(cgImage: outImage!)
+            
+            return newImg.reSizeImage(reSize: oldsize)
         }
         return nil
     }
     
-    func isnoir() -> UIImage?{
+    public func isnoir() -> UIImage?{
         return KrtBlackTools.instance.isblack ? self.noir() : self
     }
 }
 
 extension String {
     //黑白缓存链接
-    func getBlackLink() -> String {
+    public func getBlackLink() -> String {
         if KrtBlackTools.instance.isblack {
             if self.contains("?") {
                 return self + "&gray"

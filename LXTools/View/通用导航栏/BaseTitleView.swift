@@ -11,6 +11,7 @@ import SnapKit
 @objc public protocol BaseTitleViewDelegate {
     func back()
     func rightBtnAction()
+    func close()
 }
 
 @IBDesignable open class BaseTitleView: UIView {
@@ -28,6 +29,7 @@ import SnapKit
     @IBInspectable public var hintColor:UIColor = UIColor.black
     @IBInspectable public var canBack:Bool = true
     @IBInspectable public var rightBtnHidden = false
+    @IBInspectable public var canClose:Bool = false
     
     public weak var delegate:BaseTitleViewDelegate?
 
@@ -37,6 +39,13 @@ import SnapKit
         b.contentHorizontalAlignment = .left
         b.sizeToFit()
         return b
+    }()
+    public var closeBtn:UIButton = {
+        let c = UIButton()
+        c.setImage(UIImage(named:"v21p78_01"), for: .normal)
+        c.contentHorizontalAlignment = .left
+        c.sizeToFit()
+        return c
     }()
     public var titleLab:UILabel = {
         let l = UILabel()
@@ -65,6 +74,7 @@ import SnapKit
         self.addSubview(titleLab)
         self.addSubview(leftBtn)
         self.addSubview(rightBtn)
+        self.addSubview(closeBtn)
         backView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
@@ -82,6 +92,14 @@ import SnapKit
         }
         leftBtn.imageView?.contentMode = .scaleAspectFit
         leftBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        closeBtn.sizeToFit()
+        closeBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(leftBtn.snp.right).offset(16.tompx())
+            make.centerY.equalTo(leftBtn)
+            make.width.equalTo(50)
+            make.height.equalTo(closeBtn.frame.size.height + 20)
+        }
+        closeBtn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         rightBtn.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-16)
             make.centerY.equalTo(titleLab)
@@ -95,6 +113,10 @@ import SnapKit
         delegate?.back()
     }
     
+    @objc func closeAction(){
+        delegate?.close()
+    }
+    
     @objc func rightAction() {
         delegate?.rightBtnAction()
     }
@@ -103,6 +125,7 @@ import SnapKit
         // refresh button state through attribute inspector
         backView.backgroundColor = backgColor
         leftBtn.isHidden = !canBack
+        closeBtn.isHidden = !canClose
         titleLab.font = UIFont.systemFont(ofSize: titleFont)
         titleLab.text = title
         titleLab.textColor = hintColor

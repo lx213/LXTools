@@ -219,6 +219,7 @@ extension UITextField {
 
 public enum mDigits: String {
     case number = "0123456789"
+    case xs = "0123456789."
     case letterlow = "qazwsxedcrfvtgbyhnujmikolp"
     case letterall = "qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP"
     case password = "0123456789qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP"

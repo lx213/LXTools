@@ -10,6 +10,11 @@ import Foundation
 
 open class BaseTitleViewController2: UIViewController,BaseTitleViewDelegate {
     
+    public func close() {
+        view.endEditing(true)
+        self.VCBack()
+    }
+    
     @IBOutlet public weak var btv: BaseTitleView!
     override open func viewDidLoad() {
         super.viewDidLoad()

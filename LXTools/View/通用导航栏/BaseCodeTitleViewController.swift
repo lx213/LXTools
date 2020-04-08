@@ -9,6 +9,11 @@
 import UIKit
 import SnapKit
 open class BaseCodeTitleViewController: UIViewController,BaseTitleViewDelegate {
+    
+    public func close() {
+        view.endEditing(true)
+        self.VCBack()
+    }
 
     public var btv = BaseTitleView()
     

@@ -14,8 +14,14 @@ open class YYWebImageUtil {
     }
     
     public static func loadGrayImg(imgv: UIImageView?, url: String, placeholder: UIImage?) {
-        imgv?.yy_setImage(with: URL(string: url), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], progress: nil, transform: { (image, url) -> UIImage? in
-            return image.grayImage()
+        imgv?.yy_setImage(with: URL(string: url.getBlackLink()), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], progress: nil, transform: { (image, url) -> UIImage? in
+            return image.noir()
+        }, completion: nil)
+    }
+    
+    public static func loadifGrayImg(imgv: UIImageView?, url: String, placeholder: UIImage?) {
+        imgv?.yy_setImage(with: URL(string: url.getBlackLink()), placeholder: placeholder, options: [YYWebImageOptions.progressiveBlur,YYWebImageOptions.setImageWithFadeAnimation], progress: nil, transform: { (image, url) -> UIImage? in
+            return image.isnoir()
         }, completion: nil)
     }
     
