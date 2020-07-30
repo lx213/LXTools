@@ -23,6 +23,12 @@ extension String {
         return df.date(from: self)
     }
     
+    ///转换前端类型日期
+   public func toTDate() -> Date? {
+       let dstr = self.substring(toIndex: 19).replacingOccurrences(of: "T", with: " ")
+       return dstr.toDate(format: "yyyy-MM-dd HH:mm:ss")
+   }
+    
     ///字符长度
     public var length_ex: Int {
         return self.characters.count

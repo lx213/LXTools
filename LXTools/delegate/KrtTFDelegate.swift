@@ -11,14 +11,20 @@ import Foundation
 open class KrtTFDelegate: NSObject,UITextFieldDelegate {
     
     var tfs = [UITextField]()
+    var doneClick:(()->())?
     
-    public init(tfs: [UITextField]) {
+    public init(tfs: [UITextField],done:(() -> ())? = nil) {
         super.init()
         self.tfs = tfs
+        self.doneClick = done
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.toNext(tfs: tfs)
+        if textField.toNext(tfs: tfs) {
+            if let done = doneClick {
+                done()
+            }
+        }
         return true
     }
     

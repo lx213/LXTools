@@ -34,6 +34,7 @@ open class CountDownButton: UIButton {
         self.timelimit = maxTime
         self.normalText = normalText
         self.cdText = cdText
+        self.msetText(text: normalText, state: .normal)
     }
     
     //开始倒计时

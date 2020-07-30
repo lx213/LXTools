@@ -142,17 +142,19 @@ extension UITextField {
     }
     
     /// 跳转到一下一个或收起键盘
-    public func toNext(tfs: [UITextField]) {
+    public func toNext(tfs: [UITextField]) -> Bool {
         for (index,tf) in tfs.enumerated() {
             if tf == self {
                 if index == tfs.count - 1 {
                     tf.resignFirstResponder()
+                    return true
                 }else{
                     tfs[index+1].becomeFirstResponder()
+                    return false
                 }
-                return
             }
         }
+        return false
     }
     
     /// 过滤空格

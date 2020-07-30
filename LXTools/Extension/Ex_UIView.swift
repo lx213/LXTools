@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SnapKit
 
 private var key: Void?
 
@@ -233,4 +234,128 @@ extension UIView {
             return bounds.size.height
         }
     }
+
+    ///设置约束
+    public func msetSnp(tips: [snpTip]) -> Self {
+        self.snp.makeConstraints { (make) in
+            for tip in tips {
+                for extend in tip.extend {
+                    switch extend {
+                    case .left:
+                        make.left.equalTo(tip.target).offset(tip.offset)
+                    case .top:
+                        make.top.equalTo(tip.target).offset(tip.offset)
+                    case .bottom:
+                        make.bottom.equalTo(tip.target).offset(tip.offset)
+                    case .right:
+                        make.right.equalTo(tip.target).offset(tip.offset)
+                    case .width:
+                        make.width.equalTo(tip.target).offset(tip.offset)
+                    case .height:
+                        make.height.equalTo(tip.target).offset(tip.offset)
+                    case .centerX:
+                        make.centerX.equalTo(tip.target).offset(tip.offset)
+                    case .centerY:
+                        make.centerY.equalTo(tip.target).offset(tip.offset)
+                    case .edges:
+                        make.edges.equalTo(tip.target).offset(tip.offset)
+                    case .center:
+                        make.center.equalTo(tip.target).offset(tip.offset)
+                    }
+                }
+            }
+        }
+        return self
+    }
+    
+    ///更新约束
+    public func mupSnp(tips: [snpTip]) -> Self {
+        self.snp.updateConstraints { (make) in
+            for tip in tips {
+                for extend in tip.extend {
+                    switch extend {
+                    case .left:
+                        make.left.equalTo(tip.target).offset(tip.offset)
+                    case .top:
+                        make.top.equalTo(tip.target).offset(tip.offset)
+                    case .bottom:
+                        make.bottom.equalTo(tip.target).offset(tip.offset)
+                    case .right:
+                        make.right.equalTo(tip.target).offset(tip.offset)
+                    case .width:
+                        make.width.equalTo(tip.target).offset(tip.offset)
+                    case .height:
+                        make.height.equalTo(tip.target).offset(tip.offset)
+                    case .centerX:
+                        make.centerX.equalTo(tip.target).offset(tip.offset)
+                    case .centerY:
+                        make.centerY.equalTo(tip.target).offset(tip.offset)
+                    case .edges:
+                        make.edges.equalTo(tip.target).offset(tip.offset)
+                    case .center:
+                        make.center.equalTo(tip.target).offset(tip.offset)
+                    }
+                }
+            }
+        }
+        return self
+    }
+    
+    ///重置约束
+    public func mrsetSnp(tips: [snpTip]) -> Self {
+        self.snp.remakeConstraints{ (make) in
+            for tip in tips {
+                for extend in tip.extend {
+                    switch extend {
+                    case .left:
+                        make.left.equalTo(tip.target).offset(tip.offset)
+                    case .top:
+                        make.top.equalTo(tip.target).offset(tip.offset)
+                    case .bottom:
+                        make.bottom.equalTo(tip.target).offset(tip.offset)
+                    case .right:
+                        make.right.equalTo(tip.target).offset(tip.offset)
+                    case .width:
+                        make.width.equalTo(tip.target).offset(tip.offset)
+                    case .height:
+                        make.height.equalTo(tip.target).offset(tip.offset)
+                    case .centerX:
+                        make.centerX.equalTo(tip.target).offset(tip.offset)
+                    case .centerY:
+                        make.centerY.equalTo(tip.target).offset(tip.offset)
+                    case .edges:
+                        make.edges.equalTo(tip.target).offset(tip.offset)
+                    case .center:
+                        make.center.equalTo(tip.target).offset(tip.offset)
+                    }
+                }
+            }
+        }
+        return self
+    }
+}
+
+public struct snpTip {
+    var extend: [ConstraintMakerExtend] = [.left]
+    var target: ConstraintRelatableTarget = 0
+    var offset: ConstraintOffsetTarget = 0
+    
+    public init(extend: [ConstraintMakerExtend],target: ConstraintRelatableTarget, offset: ConstraintOffsetTarget) {
+        self.extend = extend
+        self.target = target
+        self.offset = offset
+    }
+}
+
+public enum ConstraintMakerExtend {
+    case left
+    case top
+    case bottom
+    case right
+    case width
+    case height
+    case centerX
+    case centerY
+    case edges
+    case center
 }
