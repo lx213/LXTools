@@ -121,6 +121,11 @@ import SnapKit
         delegate?.rightBtnAction()
     }
     
+    public func setBackBtnATint(color: UIColor) {
+        leftBtn.setImage(leftBtn.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        leftBtn.tintColor = color
+    }
+    
     override open func layoutSubviews() {
         // refresh button state through attribute inspector
         backView.backgroundColor = backgColor

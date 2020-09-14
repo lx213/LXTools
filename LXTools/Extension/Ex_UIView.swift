@@ -91,6 +91,12 @@ extension UIView {
         return self
     }
     
+    ///添加至view
+    public func minsertToView(view: UIView, at: Int) -> Self {
+        view.insertSubview(self, at: at)
+        return self
+    }
+    
     ///获取所在的viewController
     public var getCurrentVC: UIViewController? {
         var next = superview

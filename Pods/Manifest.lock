@@ -9,7 +9,7 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - Parchment (1.6.0)
+  - Parchment (1.7.0)
   - Result (4.1.0)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -32,7 +32,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.2.0)
   - MJRefresh
   - Moya/RxSwift (~> 13.0.0)
-  - Parchment (= 1.6.0)
+  - Parchment (= 1.7.0)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SKPhotoBrowser (= 6.0.0)
@@ -43,12 +43,10 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManagerSwift
     - MJRefresh
-    - Parchment
     - RxAtomic
     - RxCocoa
     - RxSwift
     - SKPhotoBrowser
-    - SnapKit
     - YYCache
     - YYImage
     - YYWebImage
@@ -56,7 +54,9 @@ SPEC REPOS:
     - Alamofire
     - HandyJSON
     - Moya
+    - Parchment
     - Result
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
@@ -64,7 +64,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
+  Parchment: cae686f73685d16742cec9c19239b7578a15f0f5
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
@@ -75,6 +75,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 4917bdd30ee58ebc3ae41a2a8b81f4e9321ac7df
+PODFILE CHECKSUM: 21a3acc3181ccf84ba1190d6dd98b664cb68162e
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.2
