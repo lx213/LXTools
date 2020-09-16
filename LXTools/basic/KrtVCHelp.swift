@@ -50,7 +50,7 @@ open class KrtVCHelp {
     }
     
     ///获取顶部window
-    public func getLastWindow() -> UIWindow {
+    public static func getLastWindow() -> UIWindow {
         let windows = UIApplication.shared.windows
         for window in windows {
             if (window.isKind(of: UIWindow.self) && window.frame.equalTo(UIScreen.main.bounds)) {

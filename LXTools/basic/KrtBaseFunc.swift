@@ -87,7 +87,37 @@ public func delay(time:Double,execute:@escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time, execute: execute)
 }
 
-
+/// 将给定的图像进行拉伸,并且返回新的图像
+///
+/// - Parameters:
+///   - image: 原图
+///   - size: 目标尺寸
+/// - Returns: 返回一个新的'目标尺寸'的图像
+public func avatarImage(image: UIImage, size: CGSize) -> UIImage? {
+ 
+    let rect = CGRect(origin: CGPoint(), size: size)
+ 
+    // 1.图像的上下文-内存中开辟一个地址,跟屏幕无关
+    /**
+     * 1.绘图的尺寸
+     * 2.不透明:false(透明) / true(不透明)
+     * 3.scale:屏幕分辨率,默认情况下生成的图像使用'1.0'的分辨率,图像质量不好
+     *         可以指定'0',会选择当前设备的屏幕分辨率
+     */
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+ 
+    // 2.绘图'drawInRect'就是在指定区域内拉伸屏幕
+    image.draw(in: rect)
+ 
+    // 3.取得结果
+    let result = UIGraphicsGetImageFromCurrentImageContext()
+ 
+    // 4.关闭上下文
+    UIGraphicsEndImageContext()
+ 
+    // 5.返回结果
+    return result
+}
 
 
 
