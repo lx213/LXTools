@@ -9,6 +9,16 @@
 import Foundation
 
 public struct AttriTextOpt {
+    public init(str: String, font: CGFloat,bold: Bool = false,color: UIColor = .black,lineMode: Int = 0,fontWeight: UIFont.Weight = UIFont.Weight.regular,lineSpacing: CGFloat = 0) {
+        self.str = str
+        self.font = font
+        self.bold = bold
+        self.color = color
+        self.lineMode = lineMode
+        self.fontWeight = fontWeight
+        self.lineSpacing = lineSpacing
+    }
+
     ///文本内容
     var str = ""
     ///字体大小
