@@ -26,6 +26,12 @@ extension UILabel {
         return self
     }
     
+    ///设置自定义粗体字
+    public func msetBFont(size: CGFloat,weight: UIFont.Weight) -> Self {
+        self.font = UIFont.systemFont(ofSize: size, weight: weight)
+        return self
+    }
+    
     ///设置字体颜色
     public func msetTextColor(color: UIColor?) -> Self {
         self.textColor = color

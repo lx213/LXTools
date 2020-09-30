@@ -51,6 +51,12 @@ extension UIButton {
         return self
     }
     
+    ///设置自定义粗体字
+    public func msetBFont(size: CGFloat,weight: UIFont.Weight) -> Self {
+        self.titleLabel?.font = UIFont.systemFont(ofSize: size, weight: weight)
+        return self
+    }
+    
     ///设置字体颜色
     public func msetTextColor(color: UIColor?, state: UIControl.State) -> Self {
         self.setTitleColor(color, for: state)
